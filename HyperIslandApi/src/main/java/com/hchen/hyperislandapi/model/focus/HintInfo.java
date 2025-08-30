@@ -1,9 +1,8 @@
 package com.hchen.hyperislandapi.model.focus;
 
-
 import java.util.Objects;
 
-public final class HintInfo extends TextAndColorInfo {
+public final class HintInfo extends TextAndColorInfo<HintInfo> {
     private ActionInfo actionInfo;
     private String colorContentBg;
     private String picContent;

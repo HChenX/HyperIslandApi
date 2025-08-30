@@ -22,15 +22,15 @@ public final class FocusTemplate {
     private String ticker;
     private String tickerPic;
     private String tickerPicDark;
-    private int timeoutMin = 720;
+    private int timeoutMin;
     private String title;
     private Integer titleColor;
     private Integer titleColorDark;
     private boolean updatable;
 
-    private int progress = -1;
-    private int progressCount = 1;
-    private boolean showSmallIcon = true;
+    private int progress;
+    private int progressCount;
+    private boolean showSmallIcon;
 
     private long timerCurrent;
     private long timerSystemCurrent;

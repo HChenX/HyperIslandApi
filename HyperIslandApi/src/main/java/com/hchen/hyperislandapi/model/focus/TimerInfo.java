@@ -4,8 +4,8 @@ import java.util.Objects;
 
 public final class TimerInfo {
     private Long timerSystemCurrent;
-    private long timerTotal = 0L;
-    private int timerType = 0;
+    private long timerTotal;
+    private int timerType;
     private Long timerWhen;
 
     public TimerInfo setTimerSystemCurrent(Long timerSystemCurrent) {

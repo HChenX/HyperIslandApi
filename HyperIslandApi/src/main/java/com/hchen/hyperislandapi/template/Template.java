@@ -14,6 +14,7 @@ import com.hchen.hyperislandapi.model.focus.MultiProgressInfo;
 import com.hchen.hyperislandapi.model.focus.PicInfo;
 import com.hchen.hyperislandapi.model.focus.ProgressInfo;
 
+import java.util.Arrays;
 import java.util.List;
 import java.util.Objects;
 
@@ -58,8 +59,8 @@ public final class Template {
     private int timeout;
     private boolean updatable;
 
-    public Template setActions(List<ActionInfo> actions) {
-        this.actions = actions;
+    public Template setActions(ActionInfo... actions) {
+        this.actions = Arrays.asList(actions);
         return this;
     }
 

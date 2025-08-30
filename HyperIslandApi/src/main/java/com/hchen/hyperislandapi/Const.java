@@ -62,16 +62,29 @@ public final class Const {
     }
 
     public static class Param {
+        public static final int BASE_INFO_TYPE = 1;
+        public static final int BASE_INFO_REVERSED_TYPE = 2;
+        public static final int BG_ALL_TYPE = 1;
+        public static final int BG_PART_TYPE = 2;
+        public static final int DEEPLINK_TYPE_URL = 1;
+        public static final int DEEPLINK_TYPE_ACTION = 2;
+        public static final int DEEPLINK_TYPE_SERVICE = 3;
+        public static final int HIGHLIGHT_TIME_TYPE = 1;
+        public static final int HIGHLIGHT_SPORT_TYPE = 2;
+        public static final int HINT_INFO_SIMPLE_TYPE = 1;
+        public static final int HINT_INFO_COMPLEX_TYPE = 2;
+        public static final int ICON_TEXT_TYPE_EAR = 1;
+        public static final int PIC_INFO_SMALL_TYPE = 1;
+        public static final int PIC_INFO_MIDDLE_TYPE = 2;
+        public static final int PIC_INFO_LARGE_TYPE = 3;
+        public static final int PIC_INFO_ACTION_TYPE = 4;
+        public static final int PIC_INFO_TEXT_IMAGE_TYPE = 5;
         public static final String ACTION_VId_1 = "miui.focus.action_1";
         public static final String ACTION_VId_2 = "miui.focus.action_2";
         public static final String AOD_ICON_VId = "miui.focus.aodIconId";
-        public static final int BASE_INFO_REVERSED_TYPE = 2;
-        public static final int BASE_INFO_TYPE = 1;
-        public static final int BG_ALL_TYPE = 1;
         public static final String BG_IMAGE_COLOR_BITMAP = "miui.focus.bgImageColorBitmap";
         public static final String BG_IMAGE_PART_BITMAP = "miui.focus.bgImagePartBitmap";
         public static final String BG_IMAGE_VID = "miui.focus.bgImageId";
-        public static final int BG_PART_TYPE = 2;
         public static final String CHRONOMETER_VId = "miui.focus.chronometerId";
         public static final String COLOR_BG = "colorBg";
         public static final String COLOR_BG_DARK = "colorBgDark";
@@ -87,9 +100,6 @@ public final class Const {
         public static final String CONTENT = "content";
         public static final String CONTENT_ADAPT_LAYOUT = "miui.focus.adaptContentLayout";
         public static final String CONTENT_ADAPT_VIEW_IDS = "miui.focus.adaptContentIds";
-        public static final int DEEPLINK_TYPE_ACTION = 2;
-        public static final int DEEPLINK_TYPE_SERVICE = 3;
-        public static final int DEEPLINK_TYPE_URL = 1;
         public static final String DESC_1 = "desc1";
         public static final String DESC_2 = "desc2";
         public static final String EFFECT_ID = "effect_id";
@@ -98,7 +108,6 @@ public final class Const {
         public static final String EXTRA_CUSTOM_HIDE_BORDER = "miui.customHideBorder";
         public static final String EXTRA_ENABLE_FLOAT = "miui.enableFloat";
         public static final String EXTRA_EXIT_FLOATING = "miui.exitFloating";
-        public static final String EXTRA_FOCUS_DARK_ISLAND_EXPAND_VIEW = "miui.focus.rv.island.expand";
         public static final String EXTRA_FOCUS_ENABLE_ALERT = "miui.focus.enableAlert";
         public static final String EXTRA_FOCUS_REOPEN = "miui.focus.reopen";
         public static final String EXTRA_ISLAND_FIRST_FLOAT = "miui.island.firstFloat";
@@ -109,11 +118,6 @@ public final class Const {
         public static final String EXTRA_TICKER_AUTO_CLOSE = "miui.focus.tickerAutoClose";
         public static final String FILTER_WHEN_NO_PERMISSION = "filterWhenNoPermission";
         public static final String HAS_CUSTOM_BG = "miui.focus.hasCustomBg";
-        public static final int HIGHLIGHT_SPORT_TYPE = 2;
-        public static final int HIGHLIGHT_TIME_TYPE = 1;
-        public static final int HINT_INFO_COMPLEX_TYPE = 2;
-        public static final int HINT_INFO_SIMPLE_TYPE = 1;
-        public static final int ICON_TEXT_TYPE_EAR = 1;
         public static final String ICON_VId = "miui.focus.iconId";
         public static final String IS_AUTO_PROGRESS = "isAutoProgress";
         public static final String IS_FIRST_FLOAT = "islandFirstFloat";
@@ -127,6 +131,7 @@ public final class Const {
         public static final String LAYOUT_FLIP_TINY = "miui.focus.rv.tiny";
         public static final String LAYOUT_FLIP_TINY_NIGHT = "miui.focus.rv.tinyNight";
         public static final String LAYOUT_NIGHT = "miui.focus.rvNight";
+        public static final String EXTRA_FOCUS_DARK_ISLAND_EXPAND_VIEW = "miui.focus.rv.island.expand";
         public static final String MODULE_BUTTON = "miui.focus.moduleButtonId";
         public static final String NORMAL_HEIGHT = "miui.focus.normalHeight";
         public static final String NOTIFICATION_CANCEL = "cancel";
@@ -151,11 +156,6 @@ public final class Const {
         public static final String PARAM_V3 = "param_v3";
         public static final String PARAM_VOIP_V2 = "param_voip_v2";
         public static final String PIC_BG = "picBg";
-        public static final int PIC_INFO_ACTION_TYPE = 4;
-        public static final int PIC_INFO_LARGE_TYPE = 3;
-        public static final int PIC_INFO_MIDDLE_TYPE = 2;
-        public static final int PIC_INFO_SMALL_TYPE = 1;
-        public static final int PIC_INFO_TEXT_IMAGE_TYPE = 5;
         public static final String PROGRESS = "progress";
         public static final String PROGRESS_BACK_ENABLE = "miui.focus.backProgressEnable";
         public static final String PROGRESS_BACK_VId = "miui.focus.backprogressId";

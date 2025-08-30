@@ -25,8 +25,19 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
+
+    packaging {
+        resources {
+            excludes += "META-INF/**"
+        }
+    }
+
+    aaptOptions.additionalParameters '--allow-reserved-package-id', '--package-id', '0x66'
 }
 
 dependencies {
+    implementation project(':HyperIslandApi')
+
     implementation libs.appcompat
+    implementation libs.activity
 }

@@ -2,12 +2,12 @@ package com.hchen.hyperislandapi.model.focus;
 
 import java.util.Objects;
 
-public final class BaseInfo {
+public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
     private String picFunction;
-    private Boolean setMarginBottom = false;
-    private Boolean setMarginTop = false;
-    private Boolean showContentDivider = false;
-    private Boolean showDivider = false;
+    private Boolean setMarginBottom;
+    private Boolean setMarginTop;
+    private Boolean showContentDivider;
+    private Boolean showDivider;
     private Integer type;
 
     public BaseInfo setPicFunction(String picFunction) {

@@ -1,7 +1,5 @@
 package com.hchen.hyperislandapi.model.island;
 
-import com.hchen.hyperislandapi.model.focus.PicInfo;
-
 import java.util.Objects;
 
 public final class SmallIslandArea {

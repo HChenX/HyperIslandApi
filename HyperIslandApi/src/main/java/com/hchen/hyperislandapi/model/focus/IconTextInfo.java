@@ -1,9 +1,8 @@
 package com.hchen.hyperislandapi.model.focus;
 
-
 import java.util.Objects;
 
-public final class IconTextInfo extends TextAndColorInfo {
+public final class IconTextInfo extends TextAndColorInfo<IconTextInfo> {
     private AnimIconInfo animIconInfo;
     private Integer type;
 

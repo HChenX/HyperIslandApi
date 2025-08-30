@@ -4,26 +4,30 @@ import androidx.annotation.NonNull;
 
 import java.util.Objects;
 
-public final class HighlightInfo extends TextAndColorInfo {
+public final class HighlightInfo extends TextAndColorInfo<HighlightInfo> {
     private String picFunction;
     private String picFunctionDark;
     private TimerInfo timerInfo;
-    private int type = 1;
+    private int type;
 
-    public void setPicFunction(String picFunction) {
+    public HighlightInfo setPicFunction(String picFunction) {
         this.picFunction = picFunction;
+        return this;
     }
 
-    public void setPicFunctionDark(String picFunctionDark) {
+    public HighlightInfo setPicFunctionDark(String picFunctionDark) {
         this.picFunctionDark = picFunctionDark;
+        return this;
     }
 
-    public void setTimerInfo(TimerInfo timerInfo) {
+    public HighlightInfo setTimerInfo(TimerInfo timerInfo) {
         this.timerInfo = timerInfo;
+        return this;
     }
 
-    public void setType(int type) {
+    public HighlightInfo setType(int type) {
         this.type = type;
+        return this;
     }
 
     @Override

@@ -4,7 +4,7 @@ import androidx.annotation.NonNull;
 
 import java.util.Objects;
 
-public final class HighlightInfoV3 extends TextAndColorInfo {
+public final class HighlightInfoV3 extends TextAndColorInfo<HighlightInfoV3> {
     private ActionInfo actionInfo;
     private String highLightText;
     private String highLightTextColor;
@@ -17,7 +17,7 @@ public final class HighlightInfoV3 extends TextAndColorInfo {
     private String secondaryColor;
     private String secondaryColorDark;
     private String secondaryText;
-    private Boolean showSecondaryLine = Boolean.FALSE;
+    private Boolean showSecondaryLine;
 
     public HighlightInfoV3 setActionInfo(ActionInfo actionInfo) {
         this.actionInfo = actionInfo;

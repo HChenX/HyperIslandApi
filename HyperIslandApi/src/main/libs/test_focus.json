@@ -1,0 +1,47 @@
+{
+  "param_v2": {
+    "actions": [
+      {
+        "actionBgColor": "#1EFFFFFF",
+        "actionBgPressColor": "#24FFFFFF",
+        "actionIntentType": 2,
+        "actionTitle": "Close",
+        "actionTitleColor": "#FFFFFF",
+        "type": 2
+      }
+    ],
+    "aodPic": "api.demo.pic",
+    "aodTitle": "Aod Title",
+    "baseInfo": {
+      "colorContent": "#FFFFFF",
+      "colorTitle": "#FFFFFF",
+      "content": "B Content",
+      "title": "B Title",
+      "type": 2
+    },
+    "bgInfo": {
+      "colorBg": "#1A1A1A"
+    },
+    "enableFloat": true,
+    "protocol": 1,
+    "scene": "template_v2",
+    "ticker": "Ticker",
+    "tickerPic": "api.demo.pic",
+    "updatable": true
+  },
+  "param_island": {
+    "bigIslandArea": {
+      "picInfo": {
+        "pic": "api.demo.island.pic",
+        "type": 4
+      }
+    },
+    "islandProperty": 2,
+    "smallIslandArea": {
+      "picInfo": {
+        "pic": "api.demo.island.pic",
+        "type": 4
+      }
+    }
+  }
+}

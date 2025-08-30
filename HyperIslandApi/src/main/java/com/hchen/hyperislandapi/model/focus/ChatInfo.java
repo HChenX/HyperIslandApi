@@ -2,7 +2,7 @@ package com.hchen.hyperislandapi.model.focus;
 
 import java.util.Objects;
 
-public final class ChatInfo extends TextAndColorInfo {
+public final class ChatInfo extends TextAndColorInfo<ChatInfo> {
     private String appIconPkg;
     private String picProfile;
     private String picProfileDark;

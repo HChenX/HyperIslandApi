@@ -2,7 +2,7 @@ package com.hchen.hyperislandapi.model.focus;
 
 import java.util.Objects;
 
-public class TextAndColorInfo {
+public class TextAndColorInfo<T extends TextAndColorInfo<T>>  {
     private String colorContent;
     private String colorContentDark;
     private String colorExtraTitle;
@@ -15,111 +15,111 @@ public class TextAndColorInfo {
     private String colorSubTitle;
     private String colorSubTitleDark;
     private String colorTitleDark;
-    private String title = "";
-    private String subTitle = "";
-    private String extraTitle = "";
-    private String specialTitle = "";
-    private String content = "";
-    private String subContent = "";
-    private String colorTitle = "";
+    private String title;
+    private String subTitle;
+    private String extraTitle;
+    private String specialTitle;
+    private String content;
+    private String subContent;
+    private String colorTitle;
 
-    public TextAndColorInfo setColorContent(String colorContent) {
+    public T setColorContent(String colorContent) {
         this.colorContent = colorContent;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorContentDark(String colorContentDark) {
+    public T setColorContentDark(String colorContentDark) {
         this.colorContentDark = colorContentDark;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorExtraTitle(String colorExtraTitle) {
+    public T setColorExtraTitle(String colorExtraTitle) {
         this.colorExtraTitle = colorExtraTitle;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorExtraTitleDark(String colorExtraTitleDark) {
+    public T setColorExtraTitleDark(String colorExtraTitleDark) {
         this.colorExtraTitleDark = colorExtraTitleDark;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorSpecialBg(String colorSpecialBg) {
+    public T setColorSpecialBg(String colorSpecialBg) {
         this.colorSpecialBg = colorSpecialBg;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorSpecialTitle(String colorSpecialTitle) {
+    public T setColorSpecialTitle(String colorSpecialTitle) {
         this.colorSpecialTitle = colorSpecialTitle;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorSpecialTitleDark(String colorSpecialTitleDark) {
+    public T setColorSpecialTitleDark(String colorSpecialTitleDark) {
         this.colorSpecialTitleDark = colorSpecialTitleDark;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorSubContent(String colorSubContent) {
+    public T setColorSubContent(String colorSubContent) {
         this.colorSubContent = colorSubContent;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorSubContentDark(String colorSubContentDark) {
+    public T setColorSubContentDark(String colorSubContentDark) {
         this.colorSubContentDark = colorSubContentDark;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorSubTitle(String colorSubTitle) {
+    public T setColorSubTitle(String colorSubTitle) {
         this.colorSubTitle = colorSubTitle;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorSubTitleDark(String colorSubTitleDark) {
+    public T setColorSubTitleDark(String colorSubTitleDark) {
         this.colorSubTitleDark = colorSubTitleDark;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorTitleDark(String colorTitleDark) {
+    public T setColorTitleDark(String colorTitleDark) {
         this.colorTitleDark = colorTitleDark;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setTitle(String title) {
+    public T setTitle(String title) {
         this.title = title;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setSubTitle(String subTitle) {
+    public T setSubTitle(String subTitle) {
         this.subTitle = subTitle;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setExtraTitle(String extraTitle) {
+    public T setExtraTitle(String extraTitle) {
         this.extraTitle = extraTitle;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setSpecialTitle(String specialTitle) {
+    public T setSpecialTitle(String specialTitle) {
         this.specialTitle = specialTitle;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setContent(String content) {
+    public T setContent(String content) {
         this.content = content;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setSubContent(String subContent) {
+    public T setSubContent(String subContent) {
         this.subContent = subContent;
-        return this;
+        return (T) this;
     }
 
-    public TextAndColorInfo setColorTitle(String colorTitle) {
+    public T setColorTitle(String colorTitle) {
         this.colorTitle = colorTitle;
-        return this;
+        return (T) this;
     }
 
     @Override public boolean equals(Object o) {
-        if (!(o instanceof TextAndColorInfo that)) return false;
+        if (!(o instanceof TextAndColorInfo<?> that)) return false;
         return Objects.equals(colorContent, that.colorContent) && Objects.equals(colorContentDark, that.colorContentDark) && Objects.equals(colorExtraTitle, that.colorExtraTitle) && Objects.equals(colorExtraTitleDark, that.colorExtraTitleDark) && Objects.equals(colorSpecialBg, that.colorSpecialBg) && Objects.equals(colorSpecialTitle, that.colorSpecialTitle) && Objects.equals(colorSpecialTitleDark, that.colorSpecialTitleDark) && Objects.equals(colorSubContent, that.colorSubContent) && Objects.equals(colorSubContentDark, that.colorSubContentDark) && Objects.equals(colorSubTitle, that.colorSubTitle) && Objects.equals(colorSubTitleDark, that.colorSubTitleDark) && Objects.equals(colorTitleDark, that.colorTitleDark) && Objects.equals(title, that.title) && Objects.equals(subTitle, that.subTitle) && Objects.equals(extraTitle, that.extraTitle) && Objects.equals(specialTitle, that.specialTitle) && Objects.equals(content, that.content) && Objects.equals(subContent, that.subContent) && Objects.equals(colorTitle, that.colorTitle);
     }
 

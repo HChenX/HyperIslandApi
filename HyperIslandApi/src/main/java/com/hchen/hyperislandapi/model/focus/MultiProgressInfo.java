@@ -1,12 +1,11 @@
 package com.hchen.hyperislandapi.model.focus;
 
-
 import java.util.Objects;
 
-public final class MultiProgressInfo extends TextAndColorInfo {
+public final class MultiProgressInfo extends TextAndColorInfo<MultiProgressInfo> {
     private String color;
-    private int points = 0;
-    private int progress = -1;
+    private int points;
+    private int progress;
 
     public MultiProgressInfo setColor(String color) {
         this.color = color;

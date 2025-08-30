@@ -15,9 +15,9 @@ public final class ActionInfo {
     private String actionTitle;
     private String actionTitleColor;
     private String actionTitleColorDark;
-    private boolean clickWithCollapse = false;
+    private boolean clickWithCollapse;
     private ProgressInfo progressInfo;
-    private Integer type = 32767;
+    private Integer type;
 
     public ActionInfo setAction(String action) {
         this.action = action;

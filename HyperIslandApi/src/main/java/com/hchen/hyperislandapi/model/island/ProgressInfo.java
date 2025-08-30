@@ -5,7 +5,7 @@ import java.util.Objects;
 public final class ProgressInfo {
     private String colorReach;
     private String colorUnReach;
-    private Boolean isCCW = Boolean.FALSE;
+    private Boolean isCCW;
     private Integer progress;
 
     public ProgressInfo setColorReach(String colorReach) {

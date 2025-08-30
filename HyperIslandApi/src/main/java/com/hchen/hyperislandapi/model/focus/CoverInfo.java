@@ -4,11 +4,12 @@ import androidx.annotation.NonNull;
 
 import java.util.Objects;
 
-public final class CoverInfo extends TextAndColorInfo {
+public final class CoverInfo extends TextAndColorInfo<CoverInfo> {
     private String picCover;
 
-    public void setPicCover(String picCover) {
+    public CoverInfo setPicCover(String picCover) {
         this.picCover = picCover;
+        return this;
     }
 
     @Override

@@ -1,6 +1,5 @@
 package com.hchen.hyperislandapi.model.focus;
 
-
 import java.util.Objects;
 
 public final class ProgressInfo {
@@ -8,8 +7,8 @@ public final class ProgressInfo {
     private String colorProgressDark;
     private String colorProgressEnd;
     private String colorProgressEndDark;
-    private boolean isAutoProgress = false;
-    private boolean isCCW = false;
+    private boolean isAutoProgress;
+    private boolean isCCW;
     private String picEnd;
     private String picEndUnselected;
     private String picForward;
