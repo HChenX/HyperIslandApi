@@ -18,7 +18,7 @@ public final class CustomTemplate {
     private RemoteViews rvTinyNightView;
     private RemoteViews rvNightView;
     private RemoteViews rvIslandExpandView;
-    private Bundle bundle = new Bundle();
+    private final Bundle bundle = new Bundle();
 
     public CustomTemplate setRvView(RemoteViews rvView) {
         this.rvView = rvView;

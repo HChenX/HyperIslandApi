@@ -1,6 +1,13 @@
 plugins {
     alias(libs.plugins.android.library)
+    id 'maven-publish'
 }
+
+def defVersion = 'v.0.1'
+int defVersionCode = 2025083000
+
+group = 'com.github.HChenX'
+version = defVersion
 
 android {
     namespace 'com.hchen.hyperislandapi'
@@ -8,14 +15,26 @@ android {
 
     defaultConfig {
         minSdk 29
+        // noinspection OldTargetApi
+        targetSdk 35
+        // noinspection HighAppVersionCode
+        versionCode defVersionCode
+        versionName defVersion
 
-        consumerProguardFiles "consumer-rules.pro"
+        aarMetadata {
+            minCompileSdk = 26
+        }
     }
 
     buildTypes {
         release {
             minifyEnabled false
-            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
+            consumerProguardFiles 'proguard-rules.pro'
+        }
+
+        debug {
+            minifyEnabled false
+            consumerProguardFiles 'proguard-rules.pro'
         }
     }
 
@@ -23,10 +42,41 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
+
+    publishing {
+        singleVariant("release") {
+            withSourcesJar()
+            withJavadocJar()
+        }
+    }
+
+    buildFeatures {
+        buildConfig false
+    }
+}
+
+tasks.register('androidSourcesJar', Jar) {
+    from android.sourceSets.main.java.srcDirs
 }
 
 dependencies {
     // implementation libs.gson
     implementation libs.appcompat
     implementation libs.spring.boot.starter.web
+}
+
+afterEvaluate {
+    publishing {
+        publications {
+            // Creates a Maven publication called "release".
+            release(MavenPublication) {
+                from components.release
+                groupId = 'com.github.HChenX'
+                artifactId = 'HyperIslandApi'
+                version = defVersion
+
+                artifact androidSourcesJar
+            }
+        }
+    }
 }
