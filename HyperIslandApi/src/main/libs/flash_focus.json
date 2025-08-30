@@ -1,0 +1,68 @@
+{
+  "param_v2": {
+    "protocol": 1,
+    "ticker": "使用中",
+    "tickerPic": "miui.focus.pic_ticker_pic",
+    "tickerPicDark": "miui.focus.pic_ticker_pic",
+    "aodTitle": "使用中",
+    "aodPic": "miui.focus.pic_ado_pic",
+    "scene": "template_v2",
+    "enableFloat": true,
+    "updatable": true,
+    "reopen": "reopen",
+    "islandFirstFloat": false,
+    "param_island": {
+      "islandProperty": 2,
+      "bigIslandArea": {
+        "imageTextInfoLeft": {
+          "type": 1,
+          "picInfo": {
+            "type": 3,
+            "pic": "flash_light_icon"
+          }
+        }
+      },
+      "smallIslandArea": {
+        "picInfo": {
+          "type": 3,
+          "pic": "flash_light_icon"
+        }
+      }
+    },
+    "baseInfo": {
+      "title": "手电筒",
+      "colorTitle": "#FFFFFF",
+      "content": "使用中",
+      "colorContent": "#7FFFFFFF",
+      "subContent": "",
+      "colorSubContent": "#FFFFFF",
+      "type": 2
+    },
+    "bgInfo": {
+      "colorBg": "#1A1A1A"
+    },
+    "iconTextInfo" : {
+      "title": "手电筒",
+      "content": "使用中",
+      "subContent": "",
+      "colorSubContent": "",
+      "colorSubContentDark": "",
+      "animIconInfo": {
+        "src": "doubleCharge",
+        "type": "2"
+      }
+    },
+    "actions": [
+      {
+        "type": 2,
+        "actionTitle": "关闭",
+        "actionTitleColor": "#FFFFFF",
+        "actionBgColor": "#1EFFFFFF",
+        "actionBgPressColor": "#24FFFFFF",
+        "actionIntentType": 2,
+        "actionIntent": "intent:#Intent;action=miui.systemui.action.ACTION_CLOSE_FLASHLIGHT;package=miui.systemui.plugin;end",
+        "actionIcon": "miui.focus.pic_mark_v2"
+      }
+    ]
+  }
+}

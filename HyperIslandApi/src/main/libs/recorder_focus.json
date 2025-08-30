@@ -1,0 +1,81 @@
+[
+  // miui.focus.param >>>
+  {
+    "protocol": 1,
+    "scene": "recorder",
+    "content": "正在录音…",
+    "timerType": 1,
+    "timerWhen": 1756538576060,
+    "timerSystemCurrent": 1756538576063,
+    "enableFloat": false,
+    "updatable": true,
+    "param_v2": {
+      "param_island": {
+        "bigIslandArea": {
+          "imageTextInfoLeft": {
+            "picInfo": {
+              "autoplay": true,
+              "loop": true,
+              "pic": "voiceWaveSmall",
+              "type": 2
+            },
+            "type": 1
+          },
+          "sameWidthDigitInfo": {
+            "timerInfo": {
+              "timerSystemCurrent": 1756538576063,
+              "timerType": 1,
+              "timerWhen": 1756538576059
+            }
+          }
+        },
+        "islandPriority": 1,
+        "islandProperty": 2,
+        "smallIslandArea": {
+          "picInfo": {
+            "autoplay": true,
+            "loop": true,
+            "pic": "voiceWaveSmall",
+            "type": 2
+          }
+        }
+      },
+      "islandFirstFloat": false,
+      "notifyId": "com.android.soundrecorder100",
+      "animTextInfo": {
+        "animIconInfo": {
+          "autoplay": true,
+          "loop": true,
+          "number": 0,
+          "src": "voiceWaveBig",
+          "type": 1
+        },
+        "timerInfo": {
+          "timerSystemCurrent": 1756538576063,
+          "timerType": 1,
+          "timerWhen": 1756538576059
+        }
+      },
+      "actions": [
+        {
+          "action": "miui.focus.action_1",
+          "actionIntentType": 0,
+          "type": 0
+        },
+        {
+          "action": "miui.focus.action_2",
+          "actionIntentType": 0,
+          "type": 0
+        }
+      ],
+      "protocol": 1,
+      "scene": "recorder",
+      "content": "正在录音…",
+      "timerType": 1,
+      "timerWhen": 1756538576060,
+      "timerSystemCurrent": 1756538576063,
+      "enableFloat": false,
+      "updatable": true
+    }
+  }
+]

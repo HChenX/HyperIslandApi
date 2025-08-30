@@ -1,0 +1,22 @@
+[
+  // miui.focus.param >>>
+  {
+    "protocol": 1,
+    "scene": "templateRevertProgressScene",
+    "aodTitle": "直行133米",
+    "aodPic": "miui.focus.pic_forward_v2",
+    "ticker": "直行133米",
+    "tickerPic": "miui.focus.pic_forward_v2",
+    "tickerPicDark": "miui.focus.tickerPicDark",
+    "reopen": "close",
+    "title": "直行133米",
+    "content": "高德导航中",
+    "colorTitle": "#FFFFFF",
+    "colorContent": "#FFFFFF",
+    "colorBg": "#000000",
+    "showSmallIcon": false,
+    "enableFloat": false,
+    "padding": true,
+    "updatable": true
+  }
+]

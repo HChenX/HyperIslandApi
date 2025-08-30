@@ -1,0 +1,96 @@
+[
+  // miui.focus.param >>>
+  {
+    "protocol": 1,
+    "scene": "timer",
+    "ticker": "倒计时",
+    "content": "倒计时进行中",
+    "timerType": -1,
+    "timerWhen": 1756616582326,
+    "timerSystemCurrent": 1756533481427,
+    "timerTotal": 83100000,
+    "enableFloat": false,
+    "updatable": true,
+    "param_v2": {
+      "protocol": 1,
+      "updatable": true,
+      "enableFloat": true,
+      "aodTitle": "倒计时中",
+      "aodPic": "miui.focus.pic_ticker",
+      "highlightInfo": {
+        "timerInfo": {
+          "timerType": -1,
+          "timerWhen": 1756616582326,
+          "timerSystemCurrent": 1756533481427
+        },
+        "subContent": "倒计时",
+        "colorSubContent": "#3482FF",
+        "colorSubContentDark": "#277AF7",
+        "picFunction": "miui.focus.pic_timer"
+      },
+      "actions": [
+        {
+          "type": 1,
+          "progressInfo": {
+            "progress": 100,
+            "colorProgress": "#3482FF",
+            "colorProgressDark": "#4788FF",
+            "colorProgressEnd": "#1A000000",
+            "colorProgressEndDark": "#29FFFFFF",
+            "isAutoProgress": true,
+            "isCCW": true
+          },
+          "action": "miui.focus.action_1"
+        },
+        {
+          "action": "miui.focus.action_2"
+        }
+      ],
+      "param_island": {
+        "islandProperty": 1,
+        "islandOrder": true,
+        "expandedTime": 60,
+        "bigIslandArea": {
+          "imageTextInfoLeft": {
+            "type": 1,
+            "picInfo": {
+              "type": 2,
+              "pic": "hourglass",
+              "autoplay": true
+            }
+          },
+          "sameWidthDigitInfo": {
+            "timerInfo": {
+              "timerType": -1,
+              "timerWhen": 1756616582326,
+              "timerSystemCurrent": 1756533481427
+            }
+          }
+        },
+        "smallIslandArea": {
+          "picInfo": {
+            "type": 2,
+            "pic": "hourglass",
+            "autoplay": true
+          }
+        }
+      },
+      "animTextInfo": {
+        "timerInfo": {
+          "timerType": -1,
+          "timerWhen": 1756616582326,
+          "timerSystemCurrent": 1756533481427
+        },
+        "content": "倒计时",
+        "colorContent": "#99000000",
+        "colorContentDark": "#80FFFFFF",
+        "animIconInfo": {
+          "type": 2,
+          "src": "hourglass_big",
+          "autoplay": true
+        }
+      },
+      "islandFirstFloat": false
+    }
+  }
+]

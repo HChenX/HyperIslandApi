@@ -1,0 +1,75 @@
+[
+  // miui.focus.param >>>
+  {
+    "protocol": 1,
+    "scene": "templateRevertProgressScene",
+    "content": "xxxx.mp3",
+    "timerType": 2,
+    "timerWhen": 1756538565139,
+    "timerSystemCurrent": 1756538576063,
+    "enableFloat": false,
+    "updatable": false,
+    "showSmallIcon": false,
+    "title": "录音已完成",
+    "param_v2": {
+      "param_island": {
+        "bigIslandArea": {
+          "imageTextInfoLeft": {
+            "picInfo": {
+              "autoplay": false,
+              "loop": false,
+              "pic": "voiceWaveSmall",
+              "type": 2
+            },
+            "type": 1
+          },
+          "picInfo": {
+            "contentDescription": "录音已完成",
+            "pic": "miui.focus.pic_1",
+            "type": 1
+          }
+        },
+        "islandPriority": 1,
+        "islandProperty": 2,
+        "islandTimeout": 15,
+        "smallIslandArea": {
+          "picInfo": {
+            "pic": "miui.focus.pic_2",
+            "type": 1
+          }
+        }
+      },
+      "islandFirstFloat": false,
+      "notifyId": "com.android.soundrecorder100",
+      "animTextInfo": {
+        "animIconInfo": {
+          "autoplay": false,
+          "loop": false,
+          "number": 0,
+          "src": "voiceWaveBig",
+          "type": 1
+        },
+        "title": "录音已完成"
+      },
+      "actions": [
+        {
+          "actionIcon": "action_done",
+          "actionIntent": "intent:#Intent;component=com.android.soundrecorder\/.RecordPreviewActivity;B.extra_is_from_notify=true;i.need_cancel_notification_id=100;end",
+          "actionIntentType": 1,
+          "actionTitle": "录音已完成",
+          "type": 0
+        }
+      ],
+      "protocol": 1,
+      "scene": "templateRevertProgressScene",
+      "content": "2025年08月30日 15点22分.mp3",
+      "timerType": 2,
+      "timerWhen": 1756538565139,
+      "timerSystemCurrent": 1756538576063,
+      "enableFloat": false,
+      "updatable": false,
+      "showSmallIcon": false,
+      "title": "录音已完成"
+    }
+  }
+]
