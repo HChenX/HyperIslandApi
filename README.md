@@ -35,7 +35,7 @@ dependencyResolutionManagement {
 }
 
 dependencies {
-    implementation 'com.github.HChenX:HyperIslandApi:v.0.1' // 引入依赖
+    implementation 'com.github.HChenX:HyperIslandApi:v.0.2' // 引入依赖
     implementation 'com.fasterxml.jackson.core:jackson-databind:3.5.5' // 序列化工具
 }
 ```
@@ -52,7 +52,7 @@ dependencies {
 public class Test {
     public void test() {
         // 代码仅作示例，不一定可用
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID)
+        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
         // TODO
 
         HyperIslandApi api = new HyperIslandApi();
@@ -92,20 +92,14 @@ public class Test {
                 .setImageTextInfoLeft(new ImageTextInfo()
                     .setType(1)
                     .setPicInfo(new PicInfo()
-                        .setType(4)
+                        .setType(1)
                         .setPic("api.demo.island.pic")
                     )
                 )
             )
             .setSmallIslandArea(new SmallIslandArea()
                 .setPicInfo(new PicInfo()
-                    .setType(4)
-                    .setPic("api.demo.island.pic")
-                )
-            )
-            .setBigIslandArea(new BigIslandArea()
-                .setPicInfo(new PicInfo()
-                    .setType(4)
+                    .setType(1)
                     .setPic("api.demo.island.pic")
                 )
             )

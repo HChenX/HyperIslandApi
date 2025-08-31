@@ -27,20 +27,23 @@
     "scene": "template_v2",
     "ticker": "Ticker",
     "tickerPic": "api.demo.pic",
-    "updatable": true
-  },
-  "param_island": {
-    "bigIslandArea": {
-      "picInfo": {
-        "pic": "api.demo.island.pic",
-        "type": 4
-      }
-    },
-    "islandProperty": 2,
-    "smallIslandArea": {
-      "picInfo": {
-        "pic": "api.demo.island.pic",
-        "type": 4
+    "updatable": true,
+    "param_island": {
+      "bigIslandArea": {
+        "imageTextInfoLeft": {
+          "picInfo": {
+            "pic": "api.demo.island.pic",
+            "type": 1
+          },
+          "type": 1
+        }
+      },
+      "islandProperty": 2,
+      "smallIslandArea": {
+        "picInfo": {
+          "pic": "api.demo.island.pic",
+          "type": 1
+        }
       }
     }
   }

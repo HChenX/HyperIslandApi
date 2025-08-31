@@ -105,10 +105,14 @@ public class HyperIslandApi {
 
         try {
             JSONObject object = new JSONObject(OBJECT_MAPPER.writeValueAsString(focusTemplate));
-            if (template != null)
-                object.put(Const.Param.PARAM_V2, new JSONObject(OBJECT_MAPPER.writeValueAsString(template)));
-            if (islandTemplate != null)
-                object.put(Const.Param.PARAM_ISLAND, new JSONObject(OBJECT_MAPPER.writeValueAsString(islandTemplate)));
+            if (template != null) {
+                JSONObject paramV2 = new JSONObject(OBJECT_MAPPER.writeValueAsString(template));
+                if (islandTemplate != null) {
+                    JSONObject paramIsland = new JSONObject(OBJECT_MAPPER.writeValueAsString(islandTemplate));
+                    paramV2.put(Const.Param.PARAM_ISLAND, paramIsland);
+                }
+                object.put(Const.Param.PARAM_V2, paramV2);
+            }
             bundle.putString(
                 customTemplate == null ? Const.Param.PARAM_PASS_THOUGH : Const.Param.PARAM_PASS_CUSTOM, object.toString());
         } catch (JSONException | JsonProcessingException e) {
