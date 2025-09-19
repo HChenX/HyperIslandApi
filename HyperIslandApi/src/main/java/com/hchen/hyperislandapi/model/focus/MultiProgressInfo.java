@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class MultiProgressInfo extends TextAndColorInfo<MultiProgressInfo> {
@@ -40,17 +42,21 @@ public final class MultiProgressInfo extends TextAndColorInfo<MultiProgressInfo>
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof MultiProgressInfo that)) return false;
         return points == that.points && progress == that.progress && Objects.equals(color,
             that.color);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(color, points, progress);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "MultiProgressInfo{" +
             "color='" + color + '\'' +
             ", points=" + points +

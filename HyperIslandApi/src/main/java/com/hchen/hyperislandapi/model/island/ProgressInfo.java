@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.island;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class ProgressInfo {
@@ -46,18 +48,22 @@ public final class ProgressInfo {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof ProgressInfo that)) return false;
         return Objects.equals(colorReach, that.colorReach) && Objects.equals(colorUnReach,
             that.colorUnReach) && Objects.equals(isCCW, that.isCCW) && Objects.equals(progress,
             that.progress);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(colorReach, colorUnReach, isCCW, progress);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "ProgressInfo{" +
             "colorReach='" + colorReach + '\'' +
             ", colorUnReach='" + colorUnReach + '\'' +

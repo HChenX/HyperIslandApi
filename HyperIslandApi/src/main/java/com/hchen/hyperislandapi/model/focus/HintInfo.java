@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class HintInfo extends TextAndColorInfo<HintInfo> {
@@ -70,6 +72,7 @@ public final class HintInfo extends TextAndColorInfo<HintInfo> {
     }
 
     @Override
+    @NonNull
     public String toString() {
         return "HintInfo{" +
             "actionInfo=" + actionInfo +

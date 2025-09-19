@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.island;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class SmallIslandArea {
@@ -34,17 +36,21 @@ public final class SmallIslandArea {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof SmallIslandArea that)) return false;
         return Objects.equals(combinePicInfo, that.combinePicInfo) && Objects.equals(picInfo,
             that.picInfo);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(combinePicInfo, picInfo);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "SmallIslandArea{" +
             "combinePicInfo=" + combinePicInfo +
             ", picInfo=" + picInfo +

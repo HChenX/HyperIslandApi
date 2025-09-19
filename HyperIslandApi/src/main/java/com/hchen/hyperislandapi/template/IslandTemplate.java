@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.template;
 
+import androidx.annotation.NonNull;
+
 import com.hchen.hyperislandapi.model.island.BigIslandArea;
 import com.hchen.hyperislandapi.model.island.ShareData;
 import com.hchen.hyperislandapi.model.island.SmallIslandArea;
@@ -107,18 +109,22 @@ public final class IslandTemplate {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof IslandTemplate that)) return false;
         return dismissIsland == that.dismissIsland && expandedTime == that.expandedTime && islandOrder == that.islandOrder && islandTimeout == that.islandTimeout && Objects.equals(bigIslandArea, that.bigIslandArea) && Objects.equals(business, that.business) && Objects.equals(highlightColor, that.highlightColor) && Objects.equals(islandPriority, that.islandPriority) && Objects.equals(islandProperty, that.islandProperty) && Objects.equals(maxSize, that.maxSize) && Objects.equals(needCloseAnimation, that.needCloseAnimation) && Objects.equals(shareData, that.shareData) && Objects.equals(smallIslandArea, that.smallIslandArea);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(bigIslandArea, business, dismissIsland, expandedTime, highlightColor,
             islandOrder, islandPriority, islandProperty, islandTimeout, maxSize,
             needCloseAnimation, shareData, smallIslandArea);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "IslandTemplate{" +
             "bigIslandArea=" + bigIslandArea +
             ", business='" + business + '\'' +

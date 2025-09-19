@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class PicInfo extends TextAndColorInfo<PicInfo> {
@@ -46,16 +48,20 @@ public final class PicInfo extends TextAndColorInfo<PicInfo> {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof PicInfo picInfo)) return false;
         return Objects.equals(actionInfo, picInfo.actionInfo) && Objects.equals(pic, picInfo.pic) && Objects.equals(picDark, picInfo.picDark) && Objects.equals(type, picInfo.type);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(actionInfo, pic, picDark, type);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "PicInfo{" +
             "actionInfo=" + actionInfo +
             ", pic='" + pic + '\'' +

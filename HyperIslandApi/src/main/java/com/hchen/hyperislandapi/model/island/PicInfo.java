@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.island;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class PicInfo {
@@ -70,18 +72,22 @@ public final class PicInfo {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof PicInfo picInfo)) return false;
         return Objects.equals(autoplay, picInfo.autoplay) && Objects.equals(contentDescription,
             picInfo.contentDescription) && Objects.equals(effectColor, picInfo.effectColor) && Objects.equals(effectSrc, picInfo.effectSrc) && Objects.equals(loop, picInfo.loop) && Objects.equals(number, picInfo.number) && Objects.equals(pic, picInfo.pic) && Objects.equals(type, picInfo.type);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(autoplay, contentDescription, effectColor, effectSrc, loop, number,
             pic, type);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "PicInfo{" +
             "autoplay=" + autoplay +
             ", contentDescription='" + contentDescription + '\'' +

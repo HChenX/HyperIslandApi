@@ -21,6 +21,8 @@ package com.hchen.hyperislandapi.template;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 
+import androidx.annotation.NonNull;
+
 import com.hchen.hyperislandapi.Const;
 
 import java.util.Objects;
@@ -103,16 +105,20 @@ public final class CustomTemplate {
         return bundle;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof CustomTemplate that)) return false;
         return Objects.equals(rvView, that.rvView) && Objects.equals(rvAodView, that.rvAodView) && Objects.equals(rvDecoLandView, that.rvDecoLandView) && Objects.equals(rvDecoLandNightView, that.rvDecoLandNightView) && Objects.equals(rvDecoPortView, that.rvDecoPortView) && Objects.equals(rvDecoPortNightView, that.rvDecoPortNightView) && Objects.equals(rvTinyView, that.rvTinyView) && Objects.equals(rvTinyNightView, that.rvTinyNightView) && Objects.equals(rvNightView, that.rvNightView) && Objects.equals(rvIslandExpandView, that.rvIslandExpandView);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(rvView, rvAodView, rvDecoLandView, rvDecoLandNightView, rvDecoPortView, rvDecoPortNightView, rvTinyView, rvTinyNightView, rvNightView, rvIslandExpandView);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "CustomTemplate{" +
             "rvView=" + rvView +
             ", rvAodView=" + rvAodView +

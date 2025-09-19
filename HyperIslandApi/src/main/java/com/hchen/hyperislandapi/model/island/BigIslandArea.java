@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.island;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class BigIslandArea {
@@ -64,17 +66,21 @@ public final class BigIslandArea {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof BigIslandArea that)) return false;
         return Objects.equals(fixedWidthDigitInfo, that.fixedWidthDigitInfo) && Objects.equals(imageTextInfoLeft, that.imageTextInfoLeft) && Objects.equals(imageTextInfoRight, that.imageTextInfoRight) && Objects.equals(picInfo, that.picInfo) && Objects.equals(progressTextInfo, that.progressTextInfo) && Objects.equals(sameWidthDigitInfo, that.sameWidthDigitInfo) && Objects.equals(textInfo, that.textInfo);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(fixedWidthDigitInfo, imageTextInfoLeft, imageTextInfoRight, picInfo,
             progressTextInfo, sameWidthDigitInfo, textInfo);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "BigIslandArea{" +
             "fixedWidthDigitInfo=" + fixedWidthDigitInfo +
             ", imageTextInfoLeft=" + imageTextInfoLeft +

@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class TimerInfo {
@@ -46,16 +48,20 @@ public final class TimerInfo {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof TimerInfo timerInfo)) return false;
         return timerTotal == timerInfo.timerTotal && timerType == timerInfo.timerType && Objects.equals(timerSystemCurrent, timerInfo.timerSystemCurrent) && Objects.equals(timerWhen, timerInfo.timerWhen);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(timerSystemCurrent, timerTotal, timerType, timerWhen);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "TimerInfo{" +
             "timerSystemCurrent=" + timerSystemCurrent +
             ", timerTotal=" + timerTotal +

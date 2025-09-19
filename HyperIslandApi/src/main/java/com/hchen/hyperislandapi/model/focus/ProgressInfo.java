@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class ProgressInfo {
@@ -94,18 +96,22 @@ public final class ProgressInfo {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof ProgressInfo that)) return false;
         return isAutoProgress == that.isAutoProgress && isCCW == that.isCCW && progress == that.progress && Objects.equals(colorProgress, that.colorProgress) && Objects.equals(colorProgressDark, that.colorProgressDark) && Objects.equals(colorProgressEnd, that.colorProgressEnd) && Objects.equals(colorProgressEndDark, that.colorProgressEndDark) && Objects.equals(picEnd, that.picEnd) && Objects.equals(picEndUnselected, that.picEndUnselected) && Objects.equals(picForward, that.picForward) && Objects.equals(picMiddle, that.picMiddle) && Objects.equals(picMiddleUnselected, that.picMiddleUnselected);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(colorProgress, colorProgressDark, colorProgressEnd,
             colorProgressEndDark, isAutoProgress, isCCW, picEnd, picEndUnselected, picForward,
             picMiddle, picMiddleUnselected, progress);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "ProgressInfo{" +
             "colorProgress='" + colorProgress + '\'' +
             ", colorProgressDark='" + colorProgressDark + '\'' +

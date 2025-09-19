@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class BgInfo {
@@ -40,16 +42,20 @@ public final class BgInfo {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof BgInfo bgInfo)) return false;
         return type == bgInfo.type && Objects.equals(colorBg, bgInfo.colorBg) && Objects.equals(picBg, bgInfo.picBg);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(colorBg, picBg, type);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "BgInfo{" +
             "colorBg='" + colorBg + '\'' +
             ", picBg='" + picBg + '\'' +

@@ -18,6 +18,9 @@
  */
 package com.hchen.hyperislandapi.template;
 
+import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
+
 import com.hchen.hyperislandapi.model.focus.ActionInfo;
 import com.hchen.hyperislandapi.model.focus.AnimTextInfo;
 import com.hchen.hyperislandapi.model.focus.BaseInfo;
@@ -37,8 +40,8 @@ import java.util.List;
 import java.util.Objects;
 
 /*
-* param_v2
-* */
+ * param_v2
+ * */
 public final class Template {
     private List<ActionInfo> actions;
     private AnimTextInfo animTextInfo;
@@ -76,6 +79,9 @@ public final class Template {
     private String tickerPicDark;
     private int timeout;
     private boolean updatable;
+
+    @Keep
+    private IslandTemplate param_island; // parse use
 
     public Template setActions(ActionInfo... actions) {
         this.actions = Arrays.asList(actions);
@@ -257,21 +263,20 @@ public final class Template {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof Template template)) return false;
-        return cancel == template.cancel && enableFloat == template.enableFloat && hideDeco == template.hideDeco && sequence == template.sequence && showSmallIcon == template.showSmallIcon && timeout == template.timeout && updatable == template.updatable && Objects.equals(actions, template.actions) && Objects.equals(animTextInfo, template.animTextInfo) && Objects.equals(protocol, template.protocol) && Objects.equals(scene, template.scene) && Objects.equals(aodPic, template.aodPic) && Objects.equals(aodTitle, template.aodTitle) && Objects.equals(baseInfo, template.baseInfo) && Objects.equals(bgInfo, template.bgInfo) && Objects.equals(business, template.business) && Objects.equals(chatInfo, template.chatInfo) && Objects.equals(coverInfo, template.coverInfo) && Objects.equals(highlightInfo, template.highlightInfo) && Objects.equals(highlightInfoV3, template.highlightInfoV3) && Objects.equals(hintInfo, template.hintInfo) && Objects.equals(iconTextInfo, template.iconTextInfo) && Objects.equals(isShowNotification, template.isShowNotification) && Objects.equals(islandFirstFloat, template.islandFirstFloat) && Objects.equals(multiProgressInfo, template.multiProgressInfo) && Objects.equals(notifyId, template.notifyId) && Objects.equals(orderId, template.orderId) && Objects.equals(outEffectColor, template.outEffectColor) && Objects.equals(outEffectSrc, template.outEffectSrc) && Objects.equals(picInfo, template.picInfo) && Objects.equals(progressInfo, template.progressInfo) && Objects.equals(reopen, template.reopen) && Objects.equals(textButton, template.textButton) && Objects.equals(ticker, template.ticker) && Objects.equals(tickerPic, template.tickerPic) && Objects.equals(tickerPicDark, template.tickerPicDark);
+        return cancel == template.cancel && enableFloat == template.enableFloat && hideDeco == template.hideDeco && sequence == template.sequence && showSmallIcon == template.showSmallIcon && timeout == template.timeout && updatable == template.updatable && Objects.equals(actions, template.actions) && Objects.equals(animTextInfo, template.animTextInfo) && Objects.equals(protocol, template.protocol) && Objects.equals(scene, template.scene) && Objects.equals(aodPic, template.aodPic) && Objects.equals(aodTitle, template.aodTitle) && Objects.equals(baseInfo, template.baseInfo) && Objects.equals(bgInfo, template.bgInfo) && Objects.equals(business, template.business) && Objects.equals(chatInfo, template.chatInfo) && Objects.equals(coverInfo, template.coverInfo) && Objects.equals(highlightInfo, template.highlightInfo) && Objects.equals(highlightInfoV3, template.highlightInfoV3) && Objects.equals(hintInfo, template.hintInfo) && Objects.equals(iconTextInfo, template.iconTextInfo) && Objects.equals(isShowNotification, template.isShowNotification) && Objects.equals(islandFirstFloat, template.islandFirstFloat) && Objects.equals(multiProgressInfo, template.multiProgressInfo) && Objects.equals(notifyId, template.notifyId) && Objects.equals(orderId, template.orderId) && Objects.equals(outEffectColor, template.outEffectColor) && Objects.equals(outEffectSrc, template.outEffectSrc) && Objects.equals(picInfo, template.picInfo) && Objects.equals(progressInfo, template.progressInfo) && Objects.equals(reopen, template.reopen) && Objects.equals(textButton, template.textButton) && Objects.equals(ticker, template.ticker) && Objects.equals(tickerPic, template.tickerPic) && Objects.equals(tickerPicDark, template.tickerPicDark) && Objects.equals(param_island, template.param_island);
     }
 
-    @Override public int hashCode() {
-        return Objects.hash(actions, animTextInfo, protocol, scene, aodPic, aodTitle, baseInfo,
-            bgInfo, business, cancel, chatInfo, coverInfo, enableFloat, hideDeco, highlightInfo,
-            highlightInfoV3, hintInfo, iconTextInfo, isShowNotification, islandFirstFloat,
-            multiProgressInfo, notifyId, orderId, outEffectColor, outEffectSrc, picInfo,
-            progressInfo, reopen, sequence, showSmallIcon, textButton, ticker, tickerPic,
-            tickerPicDark, timeout, updatable);
+    @Override
+    public int hashCode() {
+        return Objects.hash(actions, animTextInfo, protocol, scene, aodPic, aodTitle, baseInfo, bgInfo, business, cancel, chatInfo, coverInfo, enableFloat, hideDeco, highlightInfo, highlightInfoV3, hintInfo, iconTextInfo, isShowNotification, islandFirstFloat, multiProgressInfo, notifyId, orderId, outEffectColor, outEffectSrc, picInfo, progressInfo, reopen, sequence, showSmallIcon, textButton, ticker, tickerPic, tickerPicDark, timeout, updatable, param_island);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "Template{" +
             "actions=" + actions +
             ", animTextInfo=" + animTextInfo +
@@ -309,6 +314,7 @@ public final class Template {
             ", tickerPicDark='" + tickerPicDark + '\'' +
             ", timeout=" + timeout +
             ", updatable=" + updatable +
-            '}';
+            ", param_island=" + param_island +
+            "} " + super.toString();
     }
 }

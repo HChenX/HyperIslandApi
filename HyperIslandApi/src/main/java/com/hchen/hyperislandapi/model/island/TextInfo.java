@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.island;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class TextInfo {
@@ -64,18 +66,22 @@ public final class TextInfo {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof TextInfo textInfo)) return false;
         return Objects.equals(content, textInfo.content) && Objects.equals(frontTitle,
             textInfo.frontTitle) && Objects.equals(isTitleDigit, textInfo.isTitleDigit) && Objects.equals(narrowFont, textInfo.narrowFont) && Objects.equals(showHighlightColor, textInfo.showHighlightColor) && Objects.equals(title, textInfo.title) && Objects.equals(turnAnim, textInfo.turnAnim);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(content, frontTitle, isTitleDigit, narrowFont, showHighlightColor,
             title, turnAnim);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "TextInfo{" +
             "content='" + content + '\'' +
             ", frontTitle='" + frontTitle + '\'' +

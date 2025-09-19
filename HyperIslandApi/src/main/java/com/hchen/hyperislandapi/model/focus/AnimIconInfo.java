@@ -18,9 +18,11 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
-public final class AnimIconInfo {
+public final class AnimIconInfo extends TextAndColorInfo<AnimIconInfo> {
     private Boolean autoplay;
     private String effectColor;
     private String effectSrc;
@@ -70,18 +72,22 @@ public final class AnimIconInfo {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof AnimIconInfo that)) return false;
         return Objects.equals(autoplay, that.autoplay) && Objects.equals(effectColor,
             that.effectColor) && Objects.equals(effectSrc, that.effectSrc) && Objects.equals(loop
             , that.loop) && Objects.equals(number, that.number) && Objects.equals(src, that.src) && Objects.equals(srcDark, that.srcDark) && Objects.equals(type, that.type);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(autoplay, effectColor, effectSrc, loop, number, src, srcDark, type);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "AnimIconInfo{" +
             "autoplay=" + autoplay +
             ", effectColor='" + effectColor + '\'' +

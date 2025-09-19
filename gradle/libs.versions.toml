@@ -1,15 +1,13 @@
 [versions]
-agp = "8.12.2"
-gson = "2.13.1"
+agp = "8.13.0"
 appcompat = "1.7.1"
-activity = "1.10.1"
-springBootStarterWeb = "3.5.5"
+activity = "1.11.0"
+jacksonDatabind = "2.20.0"
 
 [libraries]
 activity = { module = "androidx.activity:activity", version.ref = "activity" }
-gson = { module = "com.google.code.gson:gson", version.ref = "gson" }
 appcompat = { group = "androidx.appcompat", name = "appcompat", version.ref = "appcompat" }
-spring-boot-starter-web = { module = "org.springframework.boot:spring-boot-starter-web", version.ref = "springBootStarterWeb" }
+jackson-databind = { module = "com.fasterxml.jackson.core:jackson-databind", version.ref = "jacksonDatabind" }
 
 [plugins]
 android-application = { id = "com.android.application", version.ref = "agp" }

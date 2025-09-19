@@ -18,6 +18,9 @@
  */
 package com.hchen.hyperislandapi.template;
 
+import androidx.annotation.Keep;
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class FocusTemplate {
@@ -56,6 +59,8 @@ public final class FocusTemplate {
     private int timerType;
     private long timerWhen;
 
+    @Keep
+    private Template param_v2;  // parse use
 
     public FocusTemplate setAodPic(String aodPic) {
         this.aodPic = aodPic;
@@ -217,20 +222,20 @@ public final class FocusTemplate {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof FocusTemplate that)) return false;
-        return enableFloat == that.enableFloat && padding == that.padding && protocol == that.protocol && timeoutMin == that.timeoutMin && updatable == that.updatable && progress == that.progress && progressCount == that.progressCount && showSmallIcon == that.showSmallIcon && timerCurrent == that.timerCurrent && timerSystemCurrent == that.timerSystemCurrent && timerTotal == that.timerTotal && timerType == that.timerType && timerWhen == that.timerWhen && Objects.equals(aodPic, that.aodPic) && Objects.equals(aodTitle, that.aodTitle) && Objects.equals(colorBg, that.colorBg) && Objects.equals(content, that.content) && Objects.equals(contentColor, that.contentColor) && Objects.equals(contentColorDark, that.contentColorDark) && Objects.equals(desc, that.desc) && Objects.equals(desc1, that.desc1) && Objects.equals(desc2, that.desc2) && Objects.equals(descColor, that.descColor) && Objects.equals(descColorDark, that.descColorDark) && Objects.equals(reopen, that.reopen) && Objects.equals(scene, that.scene) && Objects.equals(ticker, that.ticker) && Objects.equals(tickerPic, that.tickerPic) && Objects.equals(tickerPicDark, that.tickerPicDark) && Objects.equals(title, that.title) && Objects.equals(titleColor, that.titleColor) && Objects.equals(titleColorDark, that.titleColorDark);
+        return enableFloat == that.enableFloat && padding == that.padding && protocol == that.protocol && timeoutMin == that.timeoutMin && updatable == that.updatable && progress == that.progress && progressCount == that.progressCount && showSmallIcon == that.showSmallIcon && timerCurrent == that.timerCurrent && timerSystemCurrent == that.timerSystemCurrent && timerTotal == that.timerTotal && timerType == that.timerType && timerWhen == that.timerWhen && Objects.equals(aodPic, that.aodPic) && Objects.equals(aodTitle, that.aodTitle) && Objects.equals(colorBg, that.colorBg) && Objects.equals(content, that.content) && Objects.equals(contentColor, that.contentColor) && Objects.equals(contentColorDark, that.contentColorDark) && Objects.equals(desc, that.desc) && Objects.equals(desc1, that.desc1) && Objects.equals(desc2, that.desc2) && Objects.equals(descColor, that.descColor) && Objects.equals(descColorDark, that.descColorDark) && Objects.equals(reopen, that.reopen) && Objects.equals(scene, that.scene) && Objects.equals(ticker, that.ticker) && Objects.equals(tickerPic, that.tickerPic) && Objects.equals(tickerPicDark, that.tickerPicDark) && Objects.equals(title, that.title) && Objects.equals(titleColor, that.titleColor) && Objects.equals(titleColorDark, that.titleColorDark) && Objects.equals(param_v2, that.param_v2);
     }
 
-    @Override public int hashCode() {
-        return Objects.hash(aodPic, aodTitle, colorBg, content, contentColor, contentColorDark,
-            desc, desc1, desc2, descColor, descColorDark, enableFloat, padding, protocol, reopen,
-            scene, ticker, tickerPic, tickerPicDark, timeoutMin, title, titleColor,
-            titleColorDark, updatable, progress, progressCount, showSmallIcon, timerCurrent,
-            timerSystemCurrent, timerTotal, timerType, timerWhen);
+    @Override
+    public int hashCode() {
+        return Objects.hash(aodPic, aodTitle, colorBg, content, contentColor, contentColorDark, desc, desc1, desc2, descColor, descColorDark, enableFloat, padding, protocol, reopen, scene, ticker, tickerPic, tickerPicDark, timeoutMin, title, titleColor, titleColorDark, updatable, progress, progressCount, showSmallIcon, timerCurrent, timerSystemCurrent, timerTotal, timerType, timerWhen, param_v2);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "FocusTemplate{" +
             "aodPic='" + aodPic + '\'' +
             ", aodTitle='" + aodTitle + '\'' +
@@ -264,6 +269,7 @@ public final class FocusTemplate {
             ", timerTotal=" + timerTotal +
             ", timerType=" + timerType +
             ", timerWhen=" + timerWhen +
-            '}';
+            ", param_v2=" + param_v2 +
+            "} " + super.toString();
     }
 }

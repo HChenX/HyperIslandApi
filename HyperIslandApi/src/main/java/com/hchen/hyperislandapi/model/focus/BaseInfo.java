@@ -18,6 +18,8 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
+import androidx.annotation.NonNull;
+
 import java.util.Objects;
 
 public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
@@ -58,17 +60,21 @@ public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
         return this;
     }
 
-    @Override public boolean equals(Object o) {
+    @Override
+    public boolean equals(Object o) {
         if (!(o instanceof BaseInfo baseInfo)) return false;
         return Objects.equals(picFunction, baseInfo.picFunction) && Objects.equals(setMarginBottom, baseInfo.setMarginBottom) && Objects.equals(setMarginTop, baseInfo.setMarginTop) && Objects.equals(showContentDivider, baseInfo.showContentDivider) && Objects.equals(showDivider, baseInfo.showDivider) && Objects.equals(type, baseInfo.type);
     }
 
-    @Override public int hashCode() {
+    @Override
+    public int hashCode() {
         return Objects.hash(picFunction, setMarginBottom, setMarginTop, showContentDivider,
             showDivider, type);
     }
 
-    @Override public String toString() {
+    @Override
+    @NonNull
+    public String toString() {
         return "BaseInfo{" +
             "picFunction='" + picFunction + '\'' +
             ", setMarginBottom=" + setMarginBottom +
