@@ -140,7 +140,9 @@ public class MainActivity extends AppCompatActivity {
         bundle.putParcelable("api.demo.island.pic", Icon.createWithBitmap(getBitmapFromDrawable(context, R.drawable.ic_launcher_foreground)));
         bundle.putParcelable("miui.appIcon", Icon.createWithBitmap(getBitmapFromDrawable(context, R.drawable.ic_launcher_foreground)));
         api.setPicBundle(bundle);
-        api.build(builder);
+        HyperIslandApi.Data data = api.build();
+        Bundle b = builder.getExtras();
+        b.putAll(data.bundle());
 
         Notification notification = builder.build();
         notificationManager.notify(1, notification); // 使用唯一的通知ID
