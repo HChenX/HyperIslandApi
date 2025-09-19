@@ -35,8 +35,8 @@ dependencyResolutionManagement {
 }
 
 dependencies {
-    implementation 'com.github.HChenX:HyperIslandApi:v.0.2' // 引入依赖
-    implementation 'com.fasterxml.jackson.core:jackson-databind:3.5.5' // 序列化工具
+    implementation 'com.github.HChenX:HyperIslandApi:v.0.3' // 引入依赖
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0' // 序列化工具
 }
 ```
 
@@ -123,5 +123,5 @@ public class Test {
 
 ```text
 // 不建议混淆本 API
--keep class com.hchen.hyperislandapi.* {*;}
+-keep class com.hchen.hyperislandapi.** {*;}
 ```
