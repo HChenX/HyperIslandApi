@@ -29,10 +29,12 @@ import com.fasterxml.jackson.core.JsonProcessingException;
 import com.fasterxml.jackson.databind.JsonNode;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
-import com.hchen.hyperislandapi.template.CustomTemplate;
+import com.hchen.hyperislandapi.callback.CoverTemplateCallback;
+import com.hchen.hyperislandapi.callback.CoverTemplateCallback2;
 import com.hchen.hyperislandapi.template.FocusTemplate;
 import com.hchen.hyperislandapi.template.IslandTemplate;
 import com.hchen.hyperislandapi.template.Template;
+import com.hchen.hyperislandapi.template.ViewsTemplate;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -55,7 +57,7 @@ public class HyperIslandApi {
     // param_island
     private IslandTemplate islandTemplate;
     // 自定义布局
-    private CustomTemplate customTemplate;
+    private ViewsTemplate viewsTemplate;
     // 所有 图片/图标 等数据放置此处
     // 并且和 pic 等数据 key 相同
     // 比如 picBundle.putParcelable("miui.focus.pic_ado_pic", Icon.createWithBitmap(bitmap))
@@ -66,6 +68,8 @@ public class HyperIslandApi {
     private Bundle actionBundle;
     // 解析已有的数据并合并，可能会覆盖已经设置的值
     private String parse;
+    // 覆盖即将序列化为字符串的数据
+    private CoverTemplateCallback callback;
 
     // 这两个字段不得混淆
     private final static Field param_v2_field;
@@ -101,8 +105,8 @@ public class HyperIslandApi {
         return this;
     }
 
-    public HyperIslandApi setCustomTemplate(CustomTemplate customTemplate) {
-        this.customTemplate = customTemplate;
+    public HyperIslandApi setRemoteViewsTemplate(ViewsTemplate viewsTemplate) {
+        this.viewsTemplate = viewsTemplate;
         return this;
     }
 
@@ -121,11 +125,16 @@ public class HyperIslandApi {
         return this;
     }
 
+    public HyperIslandApi cover(CoverTemplateCallback callback) {
+        this.callback = callback;
+        return this;
+    }
+
     public Data build() {
         Bundle bundle = new Bundle();
         if (picBundle != null) bundle.putBundle(Const.Param.PARAM_BITMAP_BUNDLE, picBundle);
         if (actionBundle != null) bundle.putBundle(Const.Param.PARAM_ACTION_BUNDLE, actionBundle);
-        if (customTemplate != null) bundle.putAll(customTemplate.getBundle());
+        if (viewsTemplate != null) bundle.putAll(viewsTemplate.getBundle());
         if (focusTemplate == null) focusTemplate = new FocusTemplate();
 
         try {
@@ -147,9 +156,16 @@ public class HyperIslandApi {
                 focusTemplate = OBJECT_MAPPER.treeToValue(templateNode, FocusTemplate.class);
             }
 
+            if (callback != null) {
+                template = (Template) param_v2_field.get(focusTemplate);
+                if (template != null)
+                    islandTemplate = (IslandTemplate) param_island_field.get(template);
+                callback.cover(focusTemplate, template, islandTemplate);
+            }
+
             JSONObject object = new JSONObject(OBJECT_MAPPER.writeValueAsString(focusTemplate));
             bundle.putString(
-                customTemplate == null ? Const.Param.PARAM_PASS_THOUGH : Const.Param.PARAM_PASS_CUSTOM, object.toString());
+                viewsTemplate == null ? Const.Param.PARAM_PASS_THOUGH : Const.Param.PARAM_PASS_CUSTOM, object.toString());
 
             return new Data(object.toString(), bundle);
         } catch (JSONException | JsonProcessingException | IllegalAccessException e) {
@@ -158,6 +174,10 @@ public class HyperIslandApi {
     }
 
     public <T> String build(String parse, T template) {
+        return build(parse, template, null);
+    }
+
+    public <T> String build(String parse, T template, CoverTemplateCallback2<T> callback2) {
         Objects.requireNonNull(parse);
         Objects.requireNonNull(template);
 
@@ -165,7 +185,9 @@ public class HyperIslandApi {
             JsonNode templateNode = OBJECT_MAPPER.valueToTree(template);
             JsonNode updateNode = OBJECT_MAPPER.readTree(parse);
             merge(templateNode, updateNode);
-            return OBJECT_MAPPER.writeValueAsString(OBJECT_MAPPER.treeToValue(templateNode, template.getClass()));
+            template = (T) OBJECT_MAPPER.treeToValue(templateNode, template.getClass());
+            if (callback2 != null) callback2.cover(template);
+            return OBJECT_MAPPER.writeValueAsString(template);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Error processing json: " + e.getMessage(), e);
         }
