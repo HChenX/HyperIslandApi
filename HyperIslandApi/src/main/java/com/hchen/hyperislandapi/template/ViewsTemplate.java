@@ -105,6 +105,46 @@ public final class ViewsTemplate {
         return bundle;
     }
 
+    public RemoteViews getRvView() {
+        return rvView;
+    }
+
+    public RemoteViews getRvAodView() {
+        return rvAodView;
+    }
+
+    public RemoteViews getRvDecoLandView() {
+        return rvDecoLandView;
+    }
+
+    public RemoteViews getRvDecoLandNightView() {
+        return rvDecoLandNightView;
+    }
+
+    public RemoteViews getRvDecoPortView() {
+        return rvDecoPortView;
+    }
+
+    public RemoteViews getRvDecoPortNightView() {
+        return rvDecoPortNightView;
+    }
+
+    public RemoteViews getRvTinyView() {
+        return rvTinyView;
+    }
+
+    public RemoteViews getRvTinyNightView() {
+        return rvTinyNightView;
+    }
+
+    public RemoteViews getRvNightView() {
+        return rvNightView;
+    }
+
+    public RemoteViews getRvIslandExpandView() {
+        return rvIslandExpandView;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ViewsTemplate that)) return false;

@@ -102,6 +102,58 @@ public final class HighlightInfoV3 extends TextAndColorInfo<HighlightInfoV3> {
         return this;
     }
 
+    public ActionInfo getActionInfo() {
+        return actionInfo;
+    }
+
+    public String getHighLightText() {
+        return highLightText;
+    }
+
+    public String getHighLightTextColor() {
+        return highLightTextColor;
+    }
+
+    public String getHighLightTextColorDark() {
+        return highLightTextColorDark;
+    }
+
+    public String getHighLightbgColor() {
+        return highLightbgColor;
+    }
+
+    public String getHighLightbgColorDark() {
+        return highLightbgColorDark;
+    }
+
+    public String getPrimaryColor() {
+        return primaryColor;
+    }
+
+    public String getPrimaryColorDark() {
+        return primaryColorDark;
+    }
+
+    public String getPrimaryText() {
+        return primaryText;
+    }
+
+    public String getSecondaryColor() {
+        return secondaryColor;
+    }
+
+    public String getSecondaryColorDark() {
+        return secondaryColorDark;
+    }
+
+    public String getSecondaryText() {
+        return secondaryText;
+    }
+
+    public Boolean getShowSecondaryLine() {
+        return showSecondaryLine;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof HighlightInfoV3 that)) return false;

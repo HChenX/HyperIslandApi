@@ -72,6 +72,38 @@ public final class AnimIconInfo extends TextAndColorInfo<AnimIconInfo> {
         return this;
     }
 
+    public Boolean getAutoplay() {
+        return autoplay;
+    }
+
+    public String getEffectColor() {
+        return effectColor;
+    }
+
+    public String getEffectSrc() {
+        return effectSrc;
+    }
+
+    public Boolean getLoop() {
+        return loop;
+    }
+
+    public Integer getNumber() {
+        return number;
+    }
+
+    public String getSrc() {
+        return src;
+    }
+
+    public String getSrcDark() {
+        return srcDark;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof AnimIconInfo that)) return false;

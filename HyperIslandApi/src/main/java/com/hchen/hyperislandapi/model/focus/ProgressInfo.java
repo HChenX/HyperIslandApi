@@ -96,6 +96,54 @@ public final class ProgressInfo {
         return this;
     }
 
+    public String getColorProgress() {
+        return colorProgress;
+    }
+
+    public String getColorProgressDark() {
+        return colorProgressDark;
+    }
+
+    public String getColorProgressEnd() {
+        return colorProgressEnd;
+    }
+
+    public String getColorProgressEndDark() {
+        return colorProgressEndDark;
+    }
+
+    public boolean isAutoProgress() {
+        return isAutoProgress;
+    }
+
+    public boolean isCCW() {
+        return isCCW;
+    }
+
+    public String getPicEnd() {
+        return picEnd;
+    }
+
+    public String getPicEndUnselected() {
+        return picEndUnselected;
+    }
+
+    public String getPicForward() {
+        return picForward;
+    }
+
+    public String getPicMiddle() {
+        return picMiddle;
+    }
+
+    public String getPicMiddleUnselected() {
+        return picMiddleUnselected;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ProgressInfo that)) return false;

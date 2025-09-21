@@ -36,6 +36,14 @@ public final class AnimTextInfo extends TextAndColorInfo<AnimTextInfo> {
         return this;
     }
 
+    public AnimIconInfo getAnimIconInfo() {
+        return animIconInfo;
+    }
+
+    public TimerInfo getTimerInfo() {
+        return timerInfo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof AnimTextInfo that)) return false;

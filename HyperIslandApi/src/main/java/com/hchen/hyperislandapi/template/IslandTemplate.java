@@ -109,6 +109,58 @@ public final class IslandTemplate {
         return this;
     }
 
+    public BigIslandArea getBigIslandArea() {
+        return bigIslandArea;
+    }
+
+    public String getBusiness() {
+        return business;
+    }
+
+    public boolean isDismissIsland() {
+        return dismissIsland;
+    }
+
+    public int getExpandedTime() {
+        return expandedTime;
+    }
+
+    public String getHighlightColor() {
+        return highlightColor;
+    }
+
+    public boolean isIslandOrder() {
+        return islandOrder;
+    }
+
+    public Integer getIslandPriority() {
+        return islandPriority;
+    }
+
+    public Integer getIslandProperty() {
+        return islandProperty;
+    }
+
+    public int getIslandTimeout() {
+        return islandTimeout;
+    }
+
+    public Boolean getMaxSize() {
+        return maxSize;
+    }
+
+    public Boolean getNeedCloseAnimation() {
+        return needCloseAnimation;
+    }
+
+    public ShareData getShareData() {
+        return shareData;
+    }
+
+    public SmallIslandArea getSmallIslandArea() {
+        return smallIslandArea;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof IslandTemplate that)) return false;

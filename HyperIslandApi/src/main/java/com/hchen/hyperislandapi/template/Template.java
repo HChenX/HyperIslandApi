@@ -263,6 +263,150 @@ public final class Template {
         return this;
     }
 
+    public List<ActionInfo> getActions() {
+        return actions;
+    }
+
+    public AnimTextInfo getAnimTextInfo() {
+        return animTextInfo;
+    }
+
+    public Integer getProtocol() {
+        return protocol;
+    }
+
+    public String getScene() {
+        return scene;
+    }
+
+    public String getAodPic() {
+        return aodPic;
+    }
+
+    public String getAodTitle() {
+        return aodTitle;
+    }
+
+    public BaseInfo getBaseInfo() {
+        return baseInfo;
+    }
+
+    public BgInfo getBgInfo() {
+        return bgInfo;
+    }
+
+    public String getBusiness() {
+        return business;
+    }
+
+    public boolean isCancel() {
+        return cancel;
+    }
+
+    public ChatInfo getChatInfo() {
+        return chatInfo;
+    }
+
+    public CoverInfo getCoverInfo() {
+        return coverInfo;
+    }
+
+    public boolean isEnableFloat() {
+        return enableFloat;
+    }
+
+    public boolean isHideDeco() {
+        return hideDeco;
+    }
+
+    public HighlightInfo getHighlightInfo() {
+        return highlightInfo;
+    }
+
+    public HighlightInfoV3 getHighlightInfoV3() {
+        return highlightInfoV3;
+    }
+
+    public HintInfo getHintInfo() {
+        return hintInfo;
+    }
+
+    public IconTextInfo getIconTextInfo() {
+        return iconTextInfo;
+    }
+
+    public Boolean getShowNotification() {
+        return isShowNotification;
+    }
+
+    public Boolean getIslandFirstFloat() {
+        return islandFirstFloat;
+    }
+
+    public MultiProgressInfo getMultiProgressInfo() {
+        return multiProgressInfo;
+    }
+
+    public String getNotifyId() {
+        return notifyId;
+    }
+
+    public String getOrderId() {
+        return orderId;
+    }
+
+    public String getOutEffectColor() {
+        return outEffectColor;
+    }
+
+    public String getOutEffectSrc() {
+        return outEffectSrc;
+    }
+
+    public PicInfo getPicInfo() {
+        return picInfo;
+    }
+
+    public ProgressInfo getProgressInfo() {
+        return progressInfo;
+    }
+
+    public String getReopen() {
+        return reopen;
+    }
+
+    public long getSequence() {
+        return sequence;
+    }
+
+    public boolean isShowSmallIcon() {
+        return showSmallIcon;
+    }
+
+    public List<ActionInfo> getTextButton() {
+        return textButton;
+    }
+
+    public String getTicker() {
+        return ticker;
+    }
+
+    public String getTickerPic() {
+        return tickerPic;
+    }
+
+    public String getTickerPicDark() {
+        return tickerPicDark;
+    }
+
+    public int getTimeout() {
+        return timeout;
+    }
+
+    public boolean isUpdatable() {
+        return updatable;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof Template template)) return false;

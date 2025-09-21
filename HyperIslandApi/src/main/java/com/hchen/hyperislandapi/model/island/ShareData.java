@@ -54,6 +54,26 @@ public final class ShareData {
         return this;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public String getShareContent() {
+        return shareContent;
+    }
+
+    public String getSharePic() {
+        return sharePic;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ShareData shareData)) return false;

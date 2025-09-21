@@ -48,6 +48,22 @@ public final class ImageTextInfo {
         return this;
     }
 
+    public PicInfo getPicInfo() {
+        return picInfo;
+    }
+
+    public ProgressInfo getProgressInfo() {
+        return progressInfo;
+    }
+
+    public TextInfo getTextInfo() {
+        return textInfo;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ImageTextInfo that)) return false;

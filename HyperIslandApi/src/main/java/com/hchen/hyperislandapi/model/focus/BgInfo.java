@@ -42,6 +42,18 @@ public final class BgInfo {
         return this;
     }
 
+    public String getColorBg() {
+        return colorBg;
+    }
+
+    public String getPicBg() {
+        return picBg;
+    }
+
+    public int getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof BgInfo bgInfo)) return false;

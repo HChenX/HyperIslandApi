@@ -36,6 +36,14 @@ public final class SmallIslandArea {
         return this;
     }
 
+    public CombinePicInfo getCombinePicInfo() {
+        return combinePicInfo;
+    }
+
+    public PicInfo getPicInfo() {
+        return picInfo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof SmallIslandArea that)) return false;

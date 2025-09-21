@@ -66,6 +66,34 @@ public final class TextInfo {
         return this;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public String getFrontTitle() {
+        return frontTitle;
+    }
+
+    public Boolean getTitleDigit() {
+        return isTitleDigit;
+    }
+
+    public Boolean getNarrowFont() {
+        return narrowFont;
+    }
+
+    public Boolean getShowHighlightColor() {
+        return showHighlightColor;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Boolean getTurnAnim() {
+        return turnAnim;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof TextInfo textInfo)) return false;

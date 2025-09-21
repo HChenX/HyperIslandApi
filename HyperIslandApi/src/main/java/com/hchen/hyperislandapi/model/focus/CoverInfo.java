@@ -30,6 +30,10 @@ public final class CoverInfo extends TextAndColorInfo<CoverInfo> {
         return this;
     }
 
+    public String getPicCover() {
+        return picCover;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof CoverInfo coverInfo)) return false;

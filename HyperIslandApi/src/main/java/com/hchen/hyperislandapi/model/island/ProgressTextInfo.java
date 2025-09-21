@@ -36,6 +36,14 @@ public final class ProgressTextInfo {
         return this;
     }
 
+    public ProgressInfo getProgressInfo() {
+        return progressInfo;
+    }
+
+    public TextInfo getTextInfo() {
+        return textInfo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ProgressTextInfo that)) return false;

@@ -60,6 +60,30 @@ public final class HintInfo extends TextAndColorInfo<HintInfo> {
         return this;
     }
 
+    public ActionInfo getActionInfo() {
+        return actionInfo;
+    }
+
+    public String getColorContentBg() {
+        return colorContentBg;
+    }
+
+    public String getPicContent() {
+        return picContent;
+    }
+
+    public TimerInfo getTimerInfo() {
+        return timerInfo;
+    }
+
+    public int getTitleLineCount() {
+        return titleLineCount;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof HintInfo hintInfo)) return false;

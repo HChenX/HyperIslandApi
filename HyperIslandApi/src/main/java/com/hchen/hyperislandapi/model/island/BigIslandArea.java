@@ -66,6 +66,34 @@ public final class BigIslandArea {
         return this;
     }
 
+    public FixedWidthDigitInfo getFixedWidthDigitInfo() {
+        return fixedWidthDigitInfo;
+    }
+
+    public ImageTextInfo getImageTextInfoLeft() {
+        return imageTextInfoLeft;
+    }
+
+    public ImageTextInfo getImageTextInfoRight() {
+        return imageTextInfoRight;
+    }
+
+    public PicInfo getPicInfo() {
+        return picInfo;
+    }
+
+    public ProgressTextInfo getProgressTextInfo() {
+        return progressTextInfo;
+    }
+
+    public SameWidthDigitInfo getSameWidthDigitInfo() {
+        return sameWidthDigitInfo;
+    }
+
+    public TextInfo getTextInfo() {
+        return textInfo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof BigIslandArea that)) return false;

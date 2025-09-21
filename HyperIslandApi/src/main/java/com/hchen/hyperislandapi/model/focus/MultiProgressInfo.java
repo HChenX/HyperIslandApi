@@ -42,6 +42,18 @@ public final class MultiProgressInfo extends TextAndColorInfo<MultiProgressInfo>
         return this;
     }
 
+    public String getColor() {
+        return color;
+    }
+
+    public int getPoints() {
+        return points;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof MultiProgressInfo that)) return false;

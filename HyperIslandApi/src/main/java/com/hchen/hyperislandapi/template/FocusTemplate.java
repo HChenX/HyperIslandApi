@@ -222,6 +222,134 @@ public final class FocusTemplate {
         return this;
     }
 
+    public String getAodPic() {
+        return aodPic;
+    }
+
+    public String getAodTitle() {
+        return aodTitle;
+    }
+
+    public Integer getColorBg() {
+        return colorBg;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public Integer getContentColor() {
+        return contentColor;
+    }
+
+    public Integer getContentColorDark() {
+        return contentColorDark;
+    }
+
+    public String getDesc() {
+        return desc;
+    }
+
+    public String getDesc1() {
+        return desc1;
+    }
+
+    public String getDesc2() {
+        return desc2;
+    }
+
+    public Integer getDescColor() {
+        return descColor;
+    }
+
+    public Integer getDescColorDark() {
+        return descColorDark;
+    }
+
+    public boolean isEnableFloat() {
+        return enableFloat;
+    }
+
+    public boolean isPadding() {
+        return padding;
+    }
+
+    public int getProtocol() {
+        return protocol;
+    }
+
+    public String getReopen() {
+        return reopen;
+    }
+
+    public String getScene() {
+        return scene;
+    }
+
+    public String getTicker() {
+        return ticker;
+    }
+
+    public String getTickerPic() {
+        return tickerPic;
+    }
+
+    public String getTickerPicDark() {
+        return tickerPicDark;
+    }
+
+    public int getTimeoutMin() {
+        return timeoutMin;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public Integer getTitleColor() {
+        return titleColor;
+    }
+
+    public Integer getTitleColorDark() {
+        return titleColorDark;
+    }
+
+    public boolean isUpdatable() {
+        return updatable;
+    }
+
+    public int getProgress() {
+        return progress;
+    }
+
+    public int getProgressCount() {
+        return progressCount;
+    }
+
+    public boolean isShowSmallIcon() {
+        return showSmallIcon;
+    }
+
+    public long getTimerCurrent() {
+        return timerCurrent;
+    }
+
+    public long getTimerSystemCurrent() {
+        return timerSystemCurrent;
+    }
+
+    public long getTimerTotal() {
+        return timerTotal;
+    }
+
+    public int getTimerType() {
+        return timerType;
+    }
+
+    public long getTimerWhen() {
+        return timerWhen;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof FocusTemplate that)) return false;

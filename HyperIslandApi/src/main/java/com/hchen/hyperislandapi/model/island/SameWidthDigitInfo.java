@@ -54,6 +54,26 @@ public final class SameWidthDigitInfo {
         return this;
     }
 
+    public String getContent() {
+        return content;
+    }
+
+    public String getDigit() {
+        return digit;
+    }
+
+    public Boolean getShowHighlightColor() {
+        return showHighlightColor;
+    }
+
+    public TimerInfo getTimerInfo() {
+        return timerInfo;
+    }
+
+    public Boolean getTurnAnim() {
+        return turnAnim;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof SameWidthDigitInfo that)) return false;

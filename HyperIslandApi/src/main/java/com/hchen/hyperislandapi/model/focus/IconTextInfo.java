@@ -34,6 +34,14 @@ public final class IconTextInfo extends TextAndColorInfo<IconTextInfo> {
         return this;
     }
 
+    public AnimIconInfo getAnimIconInfo() {
+        return animIconInfo;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
     @Override public boolean equals(Object o) {
         if (!(o instanceof IconTextInfo that)) return false;
         return Objects.equals(animIconInfo, that.animIconInfo) && Objects.equals(type, that.type);

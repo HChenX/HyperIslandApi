@@ -48,6 +48,22 @@ public final class HighlightInfo extends TextAndColorInfo<HighlightInfo> {
         return this;
     }
 
+    public String getPicFunction() {
+        return picFunction;
+    }
+
+    public String getPicFunctionDark() {
+        return picFunctionDark;
+    }
+
+    public TimerInfo getTimerInfo() {
+        return timerInfo;
+    }
+
+    public int getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof HighlightInfo that)) return false;

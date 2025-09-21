@@ -48,6 +48,22 @@ public final class ProgressInfo {
         return this;
     }
 
+    public String getColorReach() {
+        return colorReach;
+    }
+
+    public String getColorUnReach() {
+        return colorUnReach;
+    }
+
+    public Boolean getCCW() {
+        return isCCW;
+    }
+
+    public Integer getProgress() {
+        return progress;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ProgressInfo that)) return false;

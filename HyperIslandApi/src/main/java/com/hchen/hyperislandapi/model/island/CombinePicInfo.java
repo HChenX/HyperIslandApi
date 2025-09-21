@@ -42,6 +42,18 @@ public final class CombinePicInfo {
         return this;
     }
 
+    public PicInfo getPicInfo() {
+        return picInfo;
+    }
+
+    public ProgressInfo getProgressInfo() {
+        return progressInfo;
+    }
+
+    public PicInfo getSmallPicInfo() {
+        return smallPicInfo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof CombinePicInfo that)) return false;

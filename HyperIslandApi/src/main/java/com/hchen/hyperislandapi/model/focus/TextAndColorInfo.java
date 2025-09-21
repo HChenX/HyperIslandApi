@@ -138,6 +138,82 @@ public class TextAndColorInfo<T extends TextAndColorInfo<T>> {
         return (T) this;
     }
 
+    public String getColorContent() {
+        return colorContent;
+    }
+
+    public String getColorContentDark() {
+        return colorContentDark;
+    }
+
+    public String getColorExtraTitle() {
+        return colorExtraTitle;
+    }
+
+    public String getColorExtraTitleDark() {
+        return colorExtraTitleDark;
+    }
+
+    public String getColorSpecialBg() {
+        return colorSpecialBg;
+    }
+
+    public String getColorSpecialTitle() {
+        return colorSpecialTitle;
+    }
+
+    public String getColorSpecialTitleDark() {
+        return colorSpecialTitleDark;
+    }
+
+    public String getColorSubContent() {
+        return colorSubContent;
+    }
+
+    public String getColorSubContentDark() {
+        return colorSubContentDark;
+    }
+
+    public String getColorSubTitle() {
+        return colorSubTitle;
+    }
+
+    public String getColorSubTitleDark() {
+        return colorSubTitleDark;
+    }
+
+    public String getColorTitleDark() {
+        return colorTitleDark;
+    }
+
+    public String getTitle() {
+        return title;
+    }
+
+    public String getSubTitle() {
+        return subTitle;
+    }
+
+    public String getExtraTitle() {
+        return extraTitle;
+    }
+
+    public String getSpecialTitle() {
+        return specialTitle;
+    }
+
+    public String getContent() {
+        return content;
+    }
+
+    public String getSubContent() {
+        return subContent;
+    }
+
+    public String getColorTitle() {
+        return colorTitle;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof TextAndColorInfo<?> that)) return false;

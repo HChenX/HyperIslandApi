@@ -114,6 +114,66 @@ public final class ActionInfo {
         return this;
     }
 
+    public String getAction() {
+        return action;
+    }
+
+    public String getActionBgColor() {
+        return actionBgColor;
+    }
+
+    public String getActionBgColorDark() {
+        return actionBgColorDark;
+    }
+
+    public String getActionBgPressColor() {
+        return actionBgPressColor;
+    }
+
+    public String getActionBgPressColorDark() {
+        return actionBgPressColorDark;
+    }
+
+    public String getActionIcon() {
+        return actionIcon;
+    }
+
+    public String getActionIconDark() {
+        return actionIconDark;
+    }
+
+    public String getActionIntent() {
+        return actionIntent;
+    }
+
+    public Integer getActionIntentType() {
+        return actionIntentType;
+    }
+
+    public String getActionTitle() {
+        return actionTitle;
+    }
+
+    public String getActionTitleColor() {
+        return actionTitleColor;
+    }
+
+    public String getActionTitleColorDark() {
+        return actionTitleColorDark;
+    }
+
+    public boolean isClickWithCollapse() {
+        return clickWithCollapse;
+    }
+
+    public ProgressInfo getProgressInfo() {
+        return progressInfo;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ActionInfo that)) return false;

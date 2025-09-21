@@ -48,6 +48,22 @@ public final class TimerInfo {
         return this;
     }
 
+    public Long getTimerSystemCurrent() {
+        return timerSystemCurrent;
+    }
+
+    public long getTimerTotal() {
+        return timerTotal;
+    }
+
+    public int getTimerType() {
+        return timerType;
+    }
+
+    public Long getTimerWhen() {
+        return timerWhen;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof TimerInfo timerInfo)) return false;

@@ -48,6 +48,22 @@ public final class PicInfo extends TextAndColorInfo<PicInfo> {
         return this;
     }
 
+    public ActionInfo getActionInfo() {
+        return actionInfo;
+    }
+
+    public String getPic() {
+        return pic;
+    }
+
+    public String getPicDark() {
+        return picDark;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof PicInfo picInfo)) return false;

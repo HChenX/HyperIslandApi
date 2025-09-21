@@ -60,6 +60,30 @@ public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
         return this;
     }
 
+    public String getPicFunction() {
+        return picFunction;
+    }
+
+    public Boolean getSetMarginBottom() {
+        return setMarginBottom;
+    }
+
+    public Boolean getSetMarginTop() {
+        return setMarginTop;
+    }
+
+    public Boolean getShowContentDivider() {
+        return showContentDivider;
+    }
+
+    public Boolean getShowDivider() {
+        return showDivider;
+    }
+
+    public Integer getType() {
+        return type;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof BaseInfo baseInfo)) return false;

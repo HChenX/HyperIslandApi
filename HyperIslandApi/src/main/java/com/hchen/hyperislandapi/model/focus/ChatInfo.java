@@ -48,6 +48,22 @@ public final class ChatInfo extends TextAndColorInfo<ChatInfo> {
         return this;
     }
 
+    public String getAppIconPkg() {
+        return appIconPkg;
+    }
+
+    public String getPicProfile() {
+        return picProfile;
+    }
+
+    public String getPicProfileDark() {
+        return picProfileDark;
+    }
+
+    public TimerInfo getTimerInfo() {
+        return timerInfo;
+    }
+
     @Override
     public boolean equals(Object o) {
         if (!(o instanceof ChatInfo chatInfo)) return false;
