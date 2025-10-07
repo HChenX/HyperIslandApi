@@ -35,7 +35,7 @@ dependencyResolutionManagement {
 }
 
 dependencies {
-    implementation 'com.github.HChenX:HyperIslandApi:v.0.3' // 引入依赖
+    implementation 'com.github.HChenX:HyperIslandApi:v.0.6' // 引入依赖
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0' // 序列化工具
 }
 ```

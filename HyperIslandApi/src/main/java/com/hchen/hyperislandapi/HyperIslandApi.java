@@ -72,11 +72,15 @@ public class HyperIslandApi {
     private CoverTemplateCallback callback;
 
     // 这两个字段不得混淆
+    private final static Field bundle_field;
     private final static Field param_v2_field;
     private final static Field param_island_field;
 
     static {
         try {
+            bundle_field = ViewsTemplate.class.getDeclaredField("bundle");
+            bundle_field.setAccessible(true);
+
             param_v2_field = FocusTemplate.class.getDeclaredField("param_v2");
             param_v2_field.setAccessible(true);
 
@@ -131,13 +135,14 @@ public class HyperIslandApi {
     }
 
     public Data build() {
-        Bundle bundle = new Bundle();
-        if (picBundle != null) bundle.putBundle(Const.Param.PARAM_BITMAP_BUNDLE, picBundle);
-        if (actionBundle != null) bundle.putBundle(Const.Param.PARAM_ACTION_BUNDLE, actionBundle);
-        if (viewsTemplate != null) bundle.putAll(viewsTemplate.getBundle());
-        if (focusTemplate == null) focusTemplate = new FocusTemplate();
-
         try {
+            Bundle bundle = new Bundle();
+            if (picBundle != null) bundle.putBundle(Const.Param.PARAM_BITMAP_BUNDLE, picBundle);
+            if (actionBundle != null)
+                bundle.putBundle(Const.Param.PARAM_ACTION_BUNDLE, actionBundle);
+            if (viewsTemplate != null) bundle.putAll((Bundle) bundle_field.get(viewsTemplate));
+            if (focusTemplate == null) focusTemplate = new FocusTemplate();
+
             if (template != null && islandTemplate == null) {
                 param_v2_field.set(focusTemplate, template);
             } else if (template == null && islandTemplate != null) {
@@ -165,10 +170,29 @@ public class HyperIslandApi {
 
             JSONObject object = new JSONObject(OBJECT_MAPPER.writeValueAsString(focusTemplate));
             bundle.putString(
-                viewsTemplate == null ? Const.Param.PARAM_PASS_THOUGH : Const.Param.PARAM_PASS_CUSTOM, object.toString());
+                viewsTemplate == null ? Const.Param.PARAM_PASS_THOUGH : Const.Param.PARAM_PASS_CUSTOM,
+                object.toString()
+            );
 
             return new Data(object.toString(), bundle);
         } catch (JSONException | JsonProcessingException | IllegalAccessException e) {
+            throw new RuntimeException(e);
+        }
+    }
+
+    public String buildSingle() {
+        try {
+            if (focusTemplate != null && template == null && islandTemplate == null) {
+                return new JSONObject(OBJECT_MAPPER.writeValueAsString(focusTemplate)).toString();
+            }
+            if (template != null && focusTemplate == null && islandTemplate == null) {
+                return new JSONObject(OBJECT_MAPPER.writeValueAsString(template)).toString();
+            }
+            if (islandTemplate != null && focusTemplate == null && template == null) {
+                return new JSONObject(OBJECT_MAPPER.writeValueAsString(islandTemplate)).toString();
+            }
+            throw new RuntimeException("Not a single build!!");
+        } catch (JSONException | JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }

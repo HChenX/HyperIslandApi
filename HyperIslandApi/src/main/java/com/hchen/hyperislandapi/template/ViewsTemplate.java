@@ -21,6 +21,7 @@ package com.hchen.hyperislandapi.template;
 import android.os.Bundle;
 import android.widget.RemoteViews;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 
 import com.hchen.hyperislandapi.Const;
@@ -38,7 +39,9 @@ public final class ViewsTemplate {
     private RemoteViews rvTinyNightView;
     private RemoteViews rvNightView;
     private RemoteViews rvIslandExpandView;
-    private final Bundle bundle = new Bundle();
+
+    @Keep
+    private final Bundle bundle = new Bundle(); // inner use
 
     public ViewsTemplate setRvView(RemoteViews rvView) {
         this.rvView = rvView;
@@ -98,11 +101,6 @@ public final class ViewsTemplate {
         this.rvIslandExpandView = rvIslandExpandView;
         bundle.putParcelable(Const.Param.EXTRA_FOCUS_DARK_ISLAND_EXPAND_VIEW, rvIslandExpandView);
         return this;
-    }
-
-    // Inner
-    public Bundle getBundle() {
-        return bundle;
     }
 
     public RemoteViews getRvView() {
