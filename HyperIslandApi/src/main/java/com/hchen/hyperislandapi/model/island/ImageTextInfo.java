@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class ImageTextInfo {
     private PicInfo picInfo;
     private ProgressInfo progressInfo;
@@ -64,21 +62,8 @@ public final class ImageTextInfo {
         return type;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof ImageTextInfo that)) return false;
-        return Objects.equals(picInfo, that.picInfo) && Objects.equals(progressInfo,
-            that.progressInfo) && Objects.equals(textInfo, that.textInfo) && Objects.equals(type,
-            that.type);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(picInfo, progressInfo, textInfo, type);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "ImageTextInfo{" +
             "picInfo=" + picInfo +

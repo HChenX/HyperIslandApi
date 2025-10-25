@@ -37,7 +37,6 @@ import com.hchen.hyperislandapi.model.focus.ProgressInfo;
 
 import java.util.Arrays;
 import java.util.List;
-import java.util.Objects;
 
 /*
  * param_v2
@@ -45,8 +44,8 @@ import java.util.Objects;
 public final class Template {
     private List<ActionInfo> actions;
     private AnimTextInfo animTextInfo;
-    private Integer protocol;
-    private String scene;
+    // private Integer protocol;
+    // private String scene;
     private String aodPic;
     private String aodTitle;
     private BaseInfo baseInfo;
@@ -93,15 +92,15 @@ public final class Template {
         return this;
     }
 
-    public Template setProtocol(Integer protocol) {
-        this.protocol = protocol;
-        return this;
-    }
+    // public Template setProtocol(Integer protocol) {
+    //     this.protocol = protocol;
+    //     return this;
+    // }
 
-    public Template setScene(String scene) {
-        this.scene = scene;
-        return this;
-    }
+    // public Template setScene(String scene) {
+    //     this.scene = scene;
+    //     return this;
+    // }
 
     public Template setAodPic(String aodPic) {
         this.aodPic = aodPic;
@@ -271,13 +270,13 @@ public final class Template {
         return animTextInfo;
     }
 
-    public Integer getProtocol() {
-        return protocol;
-    }
+    // public Integer getProtocol() {
+    //     return protocol;
+    // }
 
-    public String getScene() {
-        return scene;
-    }
+    // public String getScene() {
+    //     return scene;
+    // }
 
     public String getAodPic() {
         return aodPic;
@@ -407,25 +406,12 @@ public final class Template {
         return updatable;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof Template template)) return false;
-        return cancel == template.cancel && enableFloat == template.enableFloat && hideDeco == template.hideDeco && sequence == template.sequence && showSmallIcon == template.showSmallIcon && timeout == template.timeout && updatable == template.updatable && Objects.equals(actions, template.actions) && Objects.equals(animTextInfo, template.animTextInfo) && Objects.equals(protocol, template.protocol) && Objects.equals(scene, template.scene) && Objects.equals(aodPic, template.aodPic) && Objects.equals(aodTitle, template.aodTitle) && Objects.equals(baseInfo, template.baseInfo) && Objects.equals(bgInfo, template.bgInfo) && Objects.equals(business, template.business) && Objects.equals(chatInfo, template.chatInfo) && Objects.equals(coverInfo, template.coverInfo) && Objects.equals(highlightInfo, template.highlightInfo) && Objects.equals(highlightInfoV3, template.highlightInfoV3) && Objects.equals(hintInfo, template.hintInfo) && Objects.equals(iconTextInfo, template.iconTextInfo) && Objects.equals(isShowNotification, template.isShowNotification) && Objects.equals(islandFirstFloat, template.islandFirstFloat) && Objects.equals(multiProgressInfo, template.multiProgressInfo) && Objects.equals(notifyId, template.notifyId) && Objects.equals(orderId, template.orderId) && Objects.equals(outEffectColor, template.outEffectColor) && Objects.equals(outEffectSrc, template.outEffectSrc) && Objects.equals(picInfo, template.picInfo) && Objects.equals(progressInfo, template.progressInfo) && Objects.equals(reopen, template.reopen) && Objects.equals(textButton, template.textButton) && Objects.equals(ticker, template.ticker) && Objects.equals(tickerPic, template.tickerPic) && Objects.equals(tickerPicDark, template.tickerPicDark) && Objects.equals(param_island, template.param_island);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(actions, animTextInfo, protocol, scene, aodPic, aodTitle, baseInfo, bgInfo, business, cancel, chatInfo, coverInfo, enableFloat, hideDeco, highlightInfo, highlightInfoV3, hintInfo, iconTextInfo, isShowNotification, islandFirstFloat, multiProgressInfo, notifyId, orderId, outEffectColor, outEffectSrc, picInfo, progressInfo, reopen, sequence, showSmallIcon, textButton, ticker, tickerPic, tickerPicDark, timeout, updatable, param_island);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "Template{" +
             "actions=" + actions +
             ", animTextInfo=" + animTextInfo +
-            ", protocol=" + protocol +
-            ", scene='" + scene + '\'' +
             ", aodPic='" + aodPic + '\'' +
             ", aodTitle='" + aodTitle + '\'' +
             ", baseInfo=" + baseInfo +
@@ -459,6 +445,6 @@ public final class Template {
             ", timeout=" + timeout +
             ", updatable=" + updatable +
             ", param_island=" + param_island +
-            "} " + super.toString();
+            '}';
     }
 }

@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class ShareData {
     private String content;
     private String pic;
@@ -74,19 +72,8 @@ public final class ShareData {
         return title;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof ShareData shareData)) return false;
-        return Objects.equals(content, shareData.content) && Objects.equals(pic, shareData.pic) && Objects.equals(shareContent, shareData.shareContent) && Objects.equals(sharePic, shareData.sharePic) && Objects.equals(title, shareData.title);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(content, pic, shareContent, sharePic, title);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "ShareData{" +
             "content='" + content + '\'' +

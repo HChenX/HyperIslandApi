@@ -18,13 +18,11 @@
  */
 package com.hchen.hyperislandapi.callback;
 
-import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 
-import com.hchen.hyperislandapi.template.FocusTemplate;
 import com.hchen.hyperislandapi.template.IslandTemplate;
 import com.hchen.hyperislandapi.template.Template;
 
 public interface CoverTemplateCallback {
-    void cover(@NonNull FocusTemplate focusTemplate, @Nullable Template template, @Nullable IslandTemplate islandTemplate);
+    void cover(@Nullable Template template, @Nullable IslandTemplate islandTemplate);
 }

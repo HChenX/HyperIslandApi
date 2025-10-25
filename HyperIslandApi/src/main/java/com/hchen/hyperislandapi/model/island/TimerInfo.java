@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class TimerInfo {
     private Long timerSystemCurrent;
     private long timerTotal;
@@ -64,19 +62,8 @@ public final class TimerInfo {
         return timerWhen;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof TimerInfo timerInfo)) return false;
-        return timerTotal == timerInfo.timerTotal && timerType == timerInfo.timerType && Objects.equals(timerSystemCurrent, timerInfo.timerSystemCurrent) && Objects.equals(timerWhen, timerInfo.timerWhen);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(timerSystemCurrent, timerTotal, timerType, timerWhen);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "TimerInfo{" +
             "timerSystemCurrent=" + timerSystemCurrent +

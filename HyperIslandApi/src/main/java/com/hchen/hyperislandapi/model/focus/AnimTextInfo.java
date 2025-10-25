@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class AnimTextInfo extends TextAndColorInfo<AnimTextInfo> {
     private AnimIconInfo animIconInfo;
     private TimerInfo timerInfo;
@@ -44,24 +42,12 @@ public final class AnimTextInfo extends TextAndColorInfo<AnimTextInfo> {
         return timerInfo;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof AnimTextInfo that)) return false;
-        return Objects.equals(animIconInfo, that.animIconInfo) && Objects.equals(timerInfo,
-            that.timerInfo);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(animIconInfo, timerInfo);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "AnimTextInfo{" +
             "animIconInfo=" + animIconInfo +
             ", timerInfo=" + timerInfo +
-            '}';
+            "} " + super.toString();
     }
 }

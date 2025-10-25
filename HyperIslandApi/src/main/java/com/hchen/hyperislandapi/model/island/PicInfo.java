@@ -20,15 +20,13 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class PicInfo {
-    private Boolean autoplay;
+    private Boolean autoplay = Boolean.FALSE;
     private String contentDescription;
     private String effectColor;
     private String effectSrc;
-    private Boolean loop;
-    private Integer number;
+    private Boolean loop = Boolean.FALSE;
+    private int number = -1;
     private String pic;
     private Integer type;
 
@@ -102,19 +100,6 @@ public final class PicInfo {
 
     public Integer getType() {
         return type;
-    }
-
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof PicInfo picInfo)) return false;
-        return Objects.equals(autoplay, picInfo.autoplay) && Objects.equals(contentDescription,
-            picInfo.contentDescription) && Objects.equals(effectColor, picInfo.effectColor) && Objects.equals(effectSrc, picInfo.effectSrc) && Objects.equals(loop, picInfo.loop) && Objects.equals(number, picInfo.number) && Objects.equals(pic, picInfo.pic) && Objects.equals(type, picInfo.type);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(autoplay, contentDescription, effectColor, effectSrc, loop, number,
-            pic, type);
     }
 
     @Override

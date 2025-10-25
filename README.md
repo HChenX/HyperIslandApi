@@ -35,7 +35,7 @@ dependencyResolutionManagement {
 }
 
 dependencies {
-    implementation 'com.github.HChenX:HyperIslandApi:v.0.6' // 引入依赖
+    implementation 'com.github.HChenX:HyperIslandApi:v.0.7' // 引入依赖
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0' // 序列化工具
 }
 ```
@@ -57,10 +57,10 @@ public class Test {
 
         HyperIslandApi api = new HyperIslandApi();
         api.setTemplate(new Template()
-            .setProtocol(1)
+            // .setProtocol(1)
             .setEnableFloat(true)
             .setUpdatable(true)
-            .setScene("template_v2")
+            // .setScene("template_v2")
             .setAodTitle("Aod Title")
             .setTicker("Ticker")
             .setTickerPic("api.demo.pic")

@@ -20,12 +20,10 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class SameWidthDigitInfo {
     private String content;
     private String digit;
-    private Boolean showHighlightColor;
+    private Boolean showHighlightColor = Boolean.FALSE;
     private TimerInfo timerInfo;
     private Boolean turnAnim;
 
@@ -74,19 +72,8 @@ public final class SameWidthDigitInfo {
         return turnAnim;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof SameWidthDigitInfo that)) return false;
-        return Objects.equals(content, that.content) && Objects.equals(digit, that.digit) && Objects.equals(showHighlightColor, that.showHighlightColor) && Objects.equals(timerInfo, that.timerInfo) && Objects.equals(turnAnim, that.turnAnim);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(content, digit, showHighlightColor, timerInfo, turnAnim);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "SameWidthDigitInfo{" +
             "content='" + content + '\'' +

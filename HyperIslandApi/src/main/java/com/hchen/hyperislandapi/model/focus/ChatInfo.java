@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class ChatInfo extends TextAndColorInfo<ChatInfo> {
     private String appIconPkg;
     private String picProfile;
@@ -64,21 +62,8 @@ public final class ChatInfo extends TextAndColorInfo<ChatInfo> {
         return timerInfo;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof ChatInfo chatInfo)) return false;
-        if (!super.equals(o)) return false;
-        return Objects.equals(appIconPkg, chatInfo.appIconPkg) && Objects.equals(picProfile,
-            chatInfo.picProfile) && Objects.equals(picProfileDark, chatInfo.picProfileDark) && Objects.equals(timerInfo, chatInfo.timerInfo);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(super.hashCode(), appIconPkg, picProfile, picProfileDark, timerInfo);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "ChatInfo{" +
             "appIconPkg='" + appIconPkg + '\'' +

@@ -20,6 +20,7 @@ package com.hchen.hyperislandapi;
 
 import android.os.Bundle;
 
+import androidx.annotation.Keep;
 import androidx.annotation.NonNull;
 
 import com.fasterxml.jackson.annotation.JsonAutoDetect;
@@ -31,7 +32,6 @@ import com.fasterxml.jackson.databind.ObjectMapper;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.hchen.hyperislandapi.callback.CoverTemplateCallback;
 import com.hchen.hyperislandapi.callback.CoverTemplateCallback2;
-import com.hchen.hyperislandapi.template.FocusTemplate;
 import com.hchen.hyperislandapi.template.IslandTemplate;
 import com.hchen.hyperislandapi.template.Template;
 import com.hchen.hyperislandapi.template.ViewsTemplate;
@@ -48,11 +48,11 @@ public class HyperIslandApi {
         .setVisibility(PropertyAccessor.FIELD, JsonAutoDetect.Visibility.ANY)
         .setDefaultPropertyInclusion(JsonInclude.Include.NON_DEFAULT);
 
+    // 外层模板
+    private OuterTemplate OUTER_TEMPLATE;
+    // OS2/OS3 焦点通知数据
     // param_v2
     private Template template;
-    // OS1/2 可能使用的焦点数据
-    // OS3 同样可用但是是超级岛形态
-    private FocusTemplate focusTemplate;
     // OS3 超级岛数据
     // param_island
     private IslandTemplate islandTemplate;
@@ -73,16 +73,12 @@ public class HyperIslandApi {
 
     // 这两个字段不得混淆
     private final static Field bundle_field;
-    private final static Field param_v2_field;
     private final static Field param_island_field;
 
     static {
         try {
             bundle_field = ViewsTemplate.class.getDeclaredField("bundle");
             bundle_field.setAccessible(true);
-
-            param_v2_field = FocusTemplate.class.getDeclaredField("param_v2");
-            param_v2_field.setAccessible(true);
 
             param_island_field = Template.class.getDeclaredField("param_island");
             param_island_field.setAccessible(true);
@@ -96,11 +92,6 @@ public class HyperIslandApi {
 
     public HyperIslandApi setTemplate(Template template) {
         this.template = template;
-        return this;
-    }
-
-    public HyperIslandApi setFocusTemplate(FocusTemplate focusTemplate) {
-        this.focusTemplate = focusTemplate;
         return this;
     }
 
@@ -134,6 +125,9 @@ public class HyperIslandApi {
         return this;
     }
 
+    /**
+     * 构建合法化模板数据
+     */
     public Data build() {
         try {
             Bundle bundle = new Bundle();
@@ -141,58 +135,41 @@ public class HyperIslandApi {
             if (actionBundle != null)
                 bundle.putBundle(Const.Param.PARAM_ACTION_BUNDLE, actionBundle);
             if (viewsTemplate != null) bundle.putAll((Bundle) bundle_field.get(viewsTemplate));
-            if (focusTemplate == null) focusTemplate = new FocusTemplate();
 
-            if (template != null && islandTemplate == null) {
-                param_v2_field.set(focusTemplate, template);
-            } else if (template == null && islandTemplate != null) {
-                template = new Template();
-                param_v2_field.set(focusTemplate, template);
-                param_island_field.set(template, islandTemplate);
-            } else if (template != null) {
-                param_v2_field.set(focusTemplate, template);
-                param_island_field.set(template, islandTemplate);
-            }
+            if (OUTER_TEMPLATE == null) OUTER_TEMPLATE = new OuterTemplate();
+            if (template == null) template = new Template();
+            OUTER_TEMPLATE.param_v2 = template;
+            if (islandTemplate != null) param_island_field.set(template, islandTemplate);
 
             if (parse != null) {
-                JsonNode templateNode = OBJECT_MAPPER.valueToTree(focusTemplate);
+                /*
+                 * 将给定的 JSON 串解析成模板并与当前模板的数据合并 (会覆盖当前模板已设置的数值)
+                 * */
+                JsonNode templateNode = OBJECT_MAPPER.valueToTree(OUTER_TEMPLATE);
                 JsonNode updateNode = OBJECT_MAPPER.readTree(parse);
                 merge(templateNode, updateNode);
-                focusTemplate = OBJECT_MAPPER.treeToValue(templateNode, FocusTemplate.class);
+                OUTER_TEMPLATE = OBJECT_MAPPER.treeToValue(templateNode, OuterTemplate.class);
             }
 
             if (callback != null) {
-                template = (Template) param_v2_field.get(focusTemplate);
+                template = OUTER_TEMPLATE.param_v2;
                 if (template != null)
                     islandTemplate = (IslandTemplate) param_island_field.get(template);
-                callback.cover(focusTemplate, template, islandTemplate);
+                /*
+                 * 覆盖指定数据
+                 * */
+                callback.cover(template, islandTemplate);
             }
 
-            JSONObject object = new JSONObject(OBJECT_MAPPER.writeValueAsString(focusTemplate));
+            JSONObject object = new JSONObject(OBJECT_MAPPER.writeValueAsString(OUTER_TEMPLATE));
             bundle.putString(
-                viewsTemplate == null ? Const.Param.PARAM_PASS_THOUGH : Const.Param.PARAM_PASS_CUSTOM,
+                viewsTemplate == null ? Const.Param.PARAM_FOCUS : Const.Param.PARAM_FOCUS_CUSTOM,
                 object.toString()
             );
 
+            OUTER_TEMPLATE = null;
             return new Data(object.toString(), bundle);
         } catch (JSONException | JsonProcessingException | IllegalAccessException e) {
-            throw new RuntimeException(e);
-        }
-    }
-
-    public String buildSingle() {
-        try {
-            if (focusTemplate != null && template == null && islandTemplate == null) {
-                return new JSONObject(OBJECT_MAPPER.writeValueAsString(focusTemplate)).toString();
-            }
-            if (template != null && focusTemplate == null && islandTemplate == null) {
-                return new JSONObject(OBJECT_MAPPER.writeValueAsString(template)).toString();
-            }
-            if (islandTemplate != null && focusTemplate == null && template == null) {
-                return new JSONObject(OBJECT_MAPPER.writeValueAsString(islandTemplate)).toString();
-            }
-            throw new RuntimeException("Not a single build!!");
-        } catch (JSONException | JsonProcessingException e) {
             throw new RuntimeException(e);
         }
     }
@@ -201,6 +178,9 @@ public class HyperIslandApi {
         return build(parse, template, null);
     }
 
+    /**
+     * 解析合并指定模板
+     */
     public <T> String build(String parse, T template, CoverTemplateCallback2<T> callback2) {
         Objects.requireNonNull(parse);
         Objects.requireNonNull(template);
@@ -214,6 +194,25 @@ public class HyperIslandApi {
             return OBJECT_MAPPER.writeValueAsString(template);
         } catch (JsonProcessingException e) {
             throw new RuntimeException("Error processing json: " + e.getMessage(), e);
+        }
+    }
+
+    /**
+     * 仅构建单个模板
+     * <p>
+     * 此方法不会执行模板的合法化构建，单纯直出单个模板序列化后的数据
+     */
+    public String buildSingle() {
+        try {
+            if (template != null && islandTemplate == null) {
+                return new JSONObject(OBJECT_MAPPER.writeValueAsString(template)).toString();
+            }
+            if (islandTemplate != null && template == null) {
+                return new JSONObject(OBJECT_MAPPER.writeValueAsString(islandTemplate)).toString();
+            }
+            throw new RuntimeException("Not a single build!!");
+        } catch (JSONException | JsonProcessingException e) {
+            throw new RuntimeException(e);
         }
     }
 
@@ -259,5 +258,11 @@ public class HyperIslandApi {
                 ", bundle=" + bundle +
                 '}';
         }
+    }
+
+    @Keep
+    private static class OuterTemplate {
+        @Keep
+        public Template param_v2;
     }
 }

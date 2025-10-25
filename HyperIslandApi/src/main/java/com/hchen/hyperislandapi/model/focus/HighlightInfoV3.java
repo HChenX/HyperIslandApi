@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class HighlightInfoV3 extends TextAndColorInfo<HighlightInfoV3> {
     private ActionInfo actionInfo;
     private String highLightText;
@@ -35,7 +33,7 @@ public final class HighlightInfoV3 extends TextAndColorInfo<HighlightInfoV3> {
     private String secondaryColor;
     private String secondaryColorDark;
     private String secondaryText;
-    private Boolean showSecondaryLine;
+    private Boolean showSecondaryLine = Boolean.FALSE;
 
     public HighlightInfoV3 setActionInfo(ActionInfo actionInfo) {
         this.actionInfo = actionInfo;
@@ -154,31 +152,8 @@ public final class HighlightInfoV3 extends TextAndColorInfo<HighlightInfoV3> {
         return showSecondaryLine;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof HighlightInfoV3 that)) return false;
-        return Objects.equals(actionInfo, that.actionInfo) &&
-            Objects.equals(highLightText, that.highLightText) &&
-            Objects.equals(highLightTextColor, that.highLightTextColor) &&
-            Objects.equals(highLightTextColorDark, that.highLightTextColorDark) &&
-            Objects.equals(highLightbgColor, that.highLightbgColor) &&
-            Objects.equals(highLightbgColorDark, that.highLightbgColorDark) &&
-            Objects.equals(primaryColor, that.primaryColor) &&
-            Objects.equals(primaryColorDark, that.primaryColorDark) &&
-            Objects.equals(primaryText, that.primaryText) &&
-            Objects.equals(secondaryColor, that.secondaryColor) &&
-            Objects.equals(secondaryColorDark, that.secondaryColorDark) &&
-            Objects.equals(secondaryText, that.secondaryText) &&
-            Objects.equals(showSecondaryLine, that.showSecondaryLine);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(actionInfo, highLightText, highLightTextColor, highLightTextColorDark, highLightbgColor, highLightbgColorDark, primaryColor, primaryColorDark, primaryText, secondaryColor, secondaryColorDark, secondaryText, showSecondaryLine);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "HighlightInfoV3{" +
             "actionInfo=" + actionInfo +

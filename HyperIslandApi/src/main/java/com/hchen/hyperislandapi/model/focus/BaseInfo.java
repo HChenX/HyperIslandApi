@@ -20,14 +20,12 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
     private String picFunction;
-    private Boolean setMarginBottom;
-    private Boolean setMarginTop;
-    private Boolean showContentDivider;
-    private Boolean showDivider;
+    private Boolean setMarginBottom = Boolean.FALSE;
+    private Boolean setMarginTop = Boolean.FALSE;
+    private Boolean showContentDivider = Boolean.FALSE;
+    private Boolean showDivider = Boolean.FALSE;
     private Integer type;
 
     public BaseInfo setPicFunction(String picFunction) {
@@ -84,20 +82,8 @@ public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
         return type;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof BaseInfo baseInfo)) return false;
-        return Objects.equals(picFunction, baseInfo.picFunction) && Objects.equals(setMarginBottom, baseInfo.setMarginBottom) && Objects.equals(setMarginTop, baseInfo.setMarginTop) && Objects.equals(showContentDivider, baseInfo.showContentDivider) && Objects.equals(showDivider, baseInfo.showDivider) && Objects.equals(type, baseInfo.type);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(picFunction, setMarginBottom, setMarginTop, showContentDivider,
-            showDivider, type);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "BaseInfo{" +
             "picFunction='" + picFunction + '\'' +
@@ -106,6 +92,6 @@ public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
             ", showContentDivider=" + showContentDivider +
             ", showDivider=" + showDivider +
             ", type=" + type +
-            '}';
+            "} " + super.toString();
     }
 }

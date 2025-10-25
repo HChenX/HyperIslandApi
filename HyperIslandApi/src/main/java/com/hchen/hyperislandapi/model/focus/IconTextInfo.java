@@ -18,7 +18,7 @@
  */
 package com.hchen.hyperislandapi.model.focus;
 
-import java.util.Objects;
+import androidx.annotation.NonNull;
 
 public final class IconTextInfo extends TextAndColorInfo<IconTextInfo> {
     private AnimIconInfo animIconInfo;
@@ -42,16 +42,9 @@ public final class IconTextInfo extends TextAndColorInfo<IconTextInfo> {
         return type;
     }
 
-    @Override public boolean equals(Object o) {
-        if (!(o instanceof IconTextInfo that)) return false;
-        return Objects.equals(animIconInfo, that.animIconInfo) && Objects.equals(type, that.type);
-    }
-
-    @Override public int hashCode() {
-        return Objects.hash(animIconInfo, type);
-    }
-
-    @Override public String toString() {
+    @NonNull
+    @Override
+    public String toString() {
         return "IconTextInfo{" +
             "animIconInfo=" + animIconInfo +
             ", type=" + type +

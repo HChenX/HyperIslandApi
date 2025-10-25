@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class ActionInfo {
     private String action;
     private String actionBgColor;
@@ -174,22 +172,8 @@ public final class ActionInfo {
         return type;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof ActionInfo that)) return false;
-        return clickWithCollapse == that.clickWithCollapse && Objects.equals(action, that.action) && Objects.equals(actionBgColor, that.actionBgColor) && Objects.equals(actionBgColorDark, that.actionBgColorDark) && Objects.equals(actionBgPressColor, that.actionBgPressColor) && Objects.equals(actionBgPressColorDark, that.actionBgPressColorDark) && Objects.equals(actionIcon, that.actionIcon) && Objects.equals(actionIconDark, that.actionIconDark) && Objects.equals(actionIntent, that.actionIntent) && Objects.equals(actionIntentType, that.actionIntentType) && Objects.equals(actionTitle, that.actionTitle) && Objects.equals(actionTitleColor, that.actionTitleColor) && Objects.equals(actionTitleColorDark, that.actionTitleColorDark) && Objects.equals(progressInfo, that.progressInfo) && Objects.equals(type, that.type);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(action, actionBgColor, actionBgColorDark, actionBgPressColor,
-            actionBgPressColorDark, actionIcon, actionIconDark, actionIntent, actionIntentType,
-            actionTitle, actionTitleColor, actionTitleColorDark, clickWithCollapse, progressInfo,
-            type);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "ActionInfo{" +
             "action='" + action + '\'' +

@@ -20,8 +20,6 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public class TextAndColorInfo<T extends TextAndColorInfo<T>> {
     private String colorContent;
     private String colorContentDark;
@@ -35,13 +33,13 @@ public class TextAndColorInfo<T extends TextAndColorInfo<T>> {
     private String colorSubTitle;
     private String colorSubTitleDark;
     private String colorTitleDark;
-    private String title;
-    private String subTitle;
-    private String extraTitle;
-    private String specialTitle;
-    private String content;
-    private String subContent;
-    private String colorTitle;
+    private String title = "";
+    private String subTitle = "";
+    private String extraTitle = "";
+    private String specialTitle = "";
+    private String content = "";
+    private String subContent = "";
+    private String colorTitle = "";
 
     public T setColorContent(String colorContent) {
         this.colorContent = colorContent;
@@ -214,19 +212,8 @@ public class TextAndColorInfo<T extends TextAndColorInfo<T>> {
         return colorTitle;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof TextAndColorInfo<?> that)) return false;
-        return Objects.equals(colorContent, that.colorContent) && Objects.equals(colorContentDark, that.colorContentDark) && Objects.equals(colorExtraTitle, that.colorExtraTitle) && Objects.equals(colorExtraTitleDark, that.colorExtraTitleDark) && Objects.equals(colorSpecialBg, that.colorSpecialBg) && Objects.equals(colorSpecialTitle, that.colorSpecialTitle) && Objects.equals(colorSpecialTitleDark, that.colorSpecialTitleDark) && Objects.equals(colorSubContent, that.colorSubContent) && Objects.equals(colorSubContentDark, that.colorSubContentDark) && Objects.equals(colorSubTitle, that.colorSubTitle) && Objects.equals(colorSubTitleDark, that.colorSubTitleDark) && Objects.equals(colorTitleDark, that.colorTitleDark) && Objects.equals(title, that.title) && Objects.equals(subTitle, that.subTitle) && Objects.equals(extraTitle, that.extraTitle) && Objects.equals(specialTitle, that.specialTitle) && Objects.equals(content, that.content) && Objects.equals(subContent, that.subContent) && Objects.equals(colorTitle, that.colorTitle);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(colorContent, colorContentDark, colorExtraTitle, colorExtraTitleDark, colorSpecialBg, colorSpecialTitle, colorSpecialTitleDark, colorSubContent, colorSubContentDark, colorSubTitle, colorSubTitleDark, colorTitleDark, title, subTitle, extraTitle, specialTitle, content, subContent, colorTitle);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "TextAndColorInfo{" +
             "colorContent='" + colorContent + '\'' +

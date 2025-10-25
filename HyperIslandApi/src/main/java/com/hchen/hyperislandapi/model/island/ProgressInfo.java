@@ -20,12 +20,10 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
-import java.util.Objects;
-
 public final class ProgressInfo {
     private String colorReach;
     private String colorUnReach;
-    private Boolean isCCW;
+    private Boolean isCCW = Boolean.FALSE;
     private Integer progress;
 
     public ProgressInfo setColorReach(String colorReach) {
@@ -64,21 +62,8 @@ public final class ProgressInfo {
         return progress;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof ProgressInfo that)) return false;
-        return Objects.equals(colorReach, that.colorReach) && Objects.equals(colorUnReach,
-            that.colorUnReach) && Objects.equals(isCCW, that.isCCW) && Objects.equals(progress,
-            that.progress);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(colorReach, colorUnReach, isCCW, progress);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "ProgressInfo{" +
             "colorReach='" + colorReach + '\'' +
