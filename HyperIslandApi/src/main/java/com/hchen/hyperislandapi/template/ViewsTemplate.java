@@ -26,10 +26,9 @@ import androidx.annotation.NonNull;
 
 import com.hchen.hyperislandapi.Const;
 
-import java.util.Objects;
-
 public final class ViewsTemplate {
     private RemoteViews rvView;
+    private RemoteViews rvNightView;
     private RemoteViews rvAodView;
     private RemoteViews rvDecoLandView;
     private RemoteViews rvDecoLandNightView;
@@ -37,7 +36,6 @@ public final class ViewsTemplate {
     private RemoteViews rvDecoPortNightView;
     private RemoteViews rvTinyView;
     private RemoteViews rvTinyNightView;
-    private RemoteViews rvNightView;
     private RemoteViews rvIslandExpandView;
 
     @Keep
@@ -46,6 +44,12 @@ public final class ViewsTemplate {
     public ViewsTemplate setRvView(RemoteViews rvView) {
         this.rvView = rvView;
         bundle.putParcelable(Const.Param.LAYOUT, rvView);
+        return this;
+    }
+
+    public ViewsTemplate setRvNightView(RemoteViews rvNightView) {
+        this.rvNightView = rvNightView;
+        bundle.putParcelable(Const.Param.LAYOUT_NIGHT, rvNightView);
         return this;
     }
 
@@ -91,12 +95,6 @@ public final class ViewsTemplate {
         return this;
     }
 
-    public ViewsTemplate setRvNightView(RemoteViews rvNightView) {
-        this.rvNightView = rvNightView;
-        bundle.putParcelable(Const.Param.LAYOUT_NIGHT, rvNightView);
-        return this;
-    }
-
     public ViewsTemplate setRvIslandExpandView(RemoteViews rvIslandExpandView) {
         this.rvIslandExpandView = rvIslandExpandView;
         bundle.putParcelable(Const.Param.EXTRA_FOCUS_DARK_ISLAND_EXPAND_VIEW, rvIslandExpandView);
@@ -105,6 +103,10 @@ public final class ViewsTemplate {
 
     public RemoteViews getRvView() {
         return rvView;
+    }
+
+    public RemoteViews getRvNightView() {
+        return rvNightView;
     }
 
     public RemoteViews getRvAodView() {
@@ -135,27 +137,12 @@ public final class ViewsTemplate {
         return rvTinyNightView;
     }
 
-    public RemoteViews getRvNightView() {
-        return rvNightView;
-    }
-
     public RemoteViews getRvIslandExpandView() {
         return rvIslandExpandView;
     }
 
-    @Override
-    public boolean equals(Object o) {
-        if (!(o instanceof ViewsTemplate that)) return false;
-        return Objects.equals(rvView, that.rvView) && Objects.equals(rvAodView, that.rvAodView) && Objects.equals(rvDecoLandView, that.rvDecoLandView) && Objects.equals(rvDecoLandNightView, that.rvDecoLandNightView) && Objects.equals(rvDecoPortView, that.rvDecoPortView) && Objects.equals(rvDecoPortNightView, that.rvDecoPortNightView) && Objects.equals(rvTinyView, that.rvTinyView) && Objects.equals(rvTinyNightView, that.rvTinyNightView) && Objects.equals(rvNightView, that.rvNightView) && Objects.equals(rvIslandExpandView, that.rvIslandExpandView);
-    }
-
-    @Override
-    public int hashCode() {
-        return Objects.hash(rvView, rvAodView, rvDecoLandView, rvDecoLandNightView, rvDecoPortView, rvDecoPortNightView, rvTinyView, rvTinyNightView, rvNightView, rvIslandExpandView);
-    }
-
-    @Override
     @NonNull
+    @Override
     public String toString() {
         return "ViewsTemplate{" +
             "rvView=" + rvView +
