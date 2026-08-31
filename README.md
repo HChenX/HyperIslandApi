@@ -76,18 +76,3 @@ app/src/main/java/com/hchen/hyperislandapi/example/MiuiFocusExamples.java
 // 不建议混淆本 API
 -keep class com.hchen.hyperislandapi.** {*;}
 ```
-
----
-
-## 📜 v.0.8 变更
-
-- 新增 `CompetitionIconTextInfo`（竞争图标文案模块）及 `Template.competitionIconTextInfo`。
-- `IslandTemplate` 新增 `appContentDescription`（岛无障碍内容描述）与 `clickDirectIntent`（os4 新增：点击岛直接派发通知意图）；`FixedWidthDigitInfo` 新增 `pic` 字段。
-- `MultiProgressInfo.progress` 默认值修正为 `-1`（与官方一致）。
-- 新增 VOIP 支持：`setParamKey(Const.Param.PARAM_VOIP_V2)` 可产出通话焦点通知。
-- `parse()` 双层自动兼容：既接受完整 `param_v2` 壳，也接受直接给出的模板内容。
-- `build()` 不再修改调用方传入的模板实例（构建副本）。
-- `Data` 新增 `applyTo(Notification.Builder)` 与 `toExtras()` 便捷写入。
-- `HyperIslandApiException` 统一异常。
-- 序列化产物不再夹杂空串字段；`Const` 补充官方 `param_island`、VOIP、channeltype、岛状态回调等常量。
-- 全量补充 javadoc 文档。
