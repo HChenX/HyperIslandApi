@@ -20,6 +20,12 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 焦点通知的基础信息区，对应官方 {@code BaseInfo}。
+ * <p>
+ * 包含标题、内容、副标题与分割线、边距、展示类型等配置，
+ * 继承 {@link TextAndColorInfo} 提供文字与颜色设置。
+ */
 public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
     private String picFunction;
     private Boolean setMarginBottom = Boolean.FALSE;
@@ -28,31 +34,37 @@ public final class BaseInfo extends TextAndColorInfo<BaseInfo> {
     private Boolean showDivider = Boolean.FALSE;
     private Integer type;
 
+    /** 设置图片功能，指定该信息区使用哪个图标资源。 */
     public BaseInfo setPicFunction(String picFunction) {
         this.picFunction = picFunction;
         return this;
     }
 
+    /** 设置内容区域底部是否留白。 */
     public BaseInfo setSetMarginBottom(Boolean setMarginBottom) {
         this.setMarginBottom = setMarginBottom;
         return this;
     }
 
+    /** 设置内容区域顶部是否留白。 */
     public BaseInfo setSetMarginTop(Boolean setMarginTop) {
         this.setMarginTop = setMarginTop;
         return this;
     }
 
+    /** 设置是否显示内容下方的分割线。 */
     public BaseInfo setShowContentDivider(Boolean showContentDivider) {
         this.showContentDivider = showContentDivider;
         return this;
     }
 
+    /** 设置是否显示整体分割线。 */
     public BaseInfo setShowDivider(Boolean showDivider) {
         this.showDivider = showDivider;
         return this;
     }
 
+    /** 设置基础信息的展示类型，如普通型、反转型等。 */
     public BaseInfo setType(Integer type) {
         this.type = type;
         return this;

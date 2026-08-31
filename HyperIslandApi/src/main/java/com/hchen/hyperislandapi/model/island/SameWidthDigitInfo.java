@@ -20,6 +20,9 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 等宽数字信息，适用于计时等对数字宽度一致有要求的场景，可内嵌倒计时。
+ */
 public final class SameWidthDigitInfo {
     private String content;
     private String digit;
@@ -27,26 +30,31 @@ public final class SameWidthDigitInfo {
     private TimerInfo timerInfo;
     private Boolean turnAnim;
 
+    /** 设置附加文案。 */
     public SameWidthDigitInfo setContent(String content) {
         this.content = content;
         return this;
     }
 
+    /** 设置数字字符。 */
     public SameWidthDigitInfo setDigit(String digit) {
         this.digit = digit;
         return this;
     }
 
+    /** 设置是否显示高亮颜色。 */
     public SameWidthDigitInfo setShowHighlightColor(Boolean showHighlightColor) {
         this.showHighlightColor = showHighlightColor;
         return this;
     }
 
+    /** 设置内嵌倒计时信息。 */
     public SameWidthDigitInfo setTimerInfo(TimerInfo timerInfo) {
         this.timerInfo = timerInfo;
         return this;
     }
 
+    /** 设置切换动画。 */
     public SameWidthDigitInfo setTurnAnim(Boolean turnAnim) {
         this.turnAnim = turnAnim;
         return this;

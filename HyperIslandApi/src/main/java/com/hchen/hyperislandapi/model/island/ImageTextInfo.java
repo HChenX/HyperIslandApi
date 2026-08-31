@@ -20,27 +20,36 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 图片与文字组合模块，用于岛内图片、文字、进度同时展示的布局。
+ * <p>
+ * {@code type} 决定模块的展示类型，其余字段按需配置。
+ */
 public final class ImageTextInfo {
     private PicInfo picInfo;
     private ProgressInfo progressInfo;
     private TextInfo textInfo;
     private Integer type;
 
+    /** 设置图片信息。 */
     public ImageTextInfo setPicInfo(PicInfo picInfo) {
         this.picInfo = picInfo;
         return this;
     }
 
+    /** 设置进度条信息。 */
     public ImageTextInfo setProgressInfo(ProgressInfo progressInfo) {
         this.progressInfo = progressInfo;
         return this;
     }
 
+    /** 设置文字信息。 */
     public ImageTextInfo setTextInfo(TextInfo textInfo) {
         this.textInfo = textInfo;
         return this;
     }
 
+    /** 设置模块展示类型。 */
     public ImageTextInfo setType(Integer type) {
         this.type = type;
         return this;

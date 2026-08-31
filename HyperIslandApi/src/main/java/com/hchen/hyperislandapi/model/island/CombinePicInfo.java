@@ -20,21 +20,27 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 组合图片信息，用于小岛同时展示主图、小图与进度条的场景。
+ */
 public final class CombinePicInfo {
     private PicInfo picInfo;
     private ProgressInfo progressInfo;
     private PicInfo smallPicInfo;
 
+    /** 设置主图信息。 */
     public CombinePicInfo setPicInfo(PicInfo picInfo) {
         this.picInfo = picInfo;
         return this;
     }
 
+    /** 设置主图进度条。 */
     public CombinePicInfo setProgressInfo(ProgressInfo progressInfo) {
         this.progressInfo = progressInfo;
         return this;
     }
 
+    /** 设置小图信息。 */
     public CombinePicInfo setSmallPicInfo(PicInfo smallPicInfo) {
         this.smallPicInfo = smallPicInfo;
         return this;

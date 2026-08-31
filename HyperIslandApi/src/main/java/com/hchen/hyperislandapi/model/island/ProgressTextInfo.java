@@ -20,15 +20,20 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 进度与文字组合模块，将 {@link ProgressInfo} 与 {@link TextInfo} 一同展示。
+ */
 public final class ProgressTextInfo {
     private ProgressInfo progressInfo;
     private TextInfo textInfo;
 
+    /** 设置进度条信息。 */
     public ProgressTextInfo setProgressInfo(ProgressInfo progressInfo) {
         this.progressInfo = progressInfo;
         return this;
     }
 
+    /** 设置文字信息。 */
     public ProgressTextInfo setTextInfo(TextInfo textInfo) {
         this.textInfo = textInfo;
         return this;

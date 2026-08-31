@@ -23,6 +23,18 @@ import androidx.annotation.Nullable;
 import com.hchen.hyperislandapi.template.IslandTemplate;
 import com.hchen.hyperislandapi.template.Template;
 
+/**
+ * 序列化前回调，用于覆盖焦点模板与超级岛模板中的任意字段。
+ * <p>
+ * 在 {@link com.hchen.hyperislandapi.HyperIslandApi#build()} 序列化之前调用，
+ * 可在此统一处理动态数据、合并 {@link com.hchen.hyperislandapi.HyperIslandApi#parse(String)} 后的结果。
+ */
 public interface CoverTemplateCallback {
+    /**
+     * 覆盖模板数据。
+     *
+     * @param template      焦点模板，可能为 {@code null}
+     * @param islandTemplate 超级岛模板，可能为 {@code null}
+     */
     void cover(@Nullable Template template, @Nullable IslandTemplate islandTemplate);
 }

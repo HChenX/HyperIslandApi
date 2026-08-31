@@ -20,15 +20,20 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 动画文字信息模块，对应官方 {@code AnimTextInfo}，用于带动画的文字展示场景。
+ */
 public final class AnimTextInfo extends TextAndColorInfo<AnimTextInfo> {
     private AnimIconInfo animIconInfo;
     private TimerInfo timerInfo;
 
+    /** 设置动画图标信息。 */
     public AnimTextInfo setAnimIconInfo(AnimIconInfo animIconInfo) {
         this.animIconInfo = animIconInfo;
         return this;
     }
 
+    /** 设置内嵌倒计时。 */
     public AnimTextInfo setTimerInfo(TimerInfo timerInfo) {
         this.timerInfo = timerInfo;
         return this;

@@ -20,21 +20,29 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 多段进度信息，对应官方 {@code MultiProgressInfo}，用于分段进度展示。
+ * <p>
+ * {@code progress} 默认 {@code -1} 表示未设置，{@code points} 为分段数量。
+ */
 public final class MultiProgressInfo extends TextAndColorInfo<MultiProgressInfo> {
     private String color;
     private int points;
-    private int progress;
+    private int progress = -1;
 
+    /** 设置进度条颜色。 */
     public MultiProgressInfo setColor(String color) {
         this.color = color;
         return this;
     }
 
+    /** 设置分段数量。 */
     public MultiProgressInfo setPoints(int points) {
         this.points = points;
         return this;
     }
 
+    /** 设置当前进度，传 {@code -1} 表示未设置。 */
     public MultiProgressInfo setProgress(int progress) {
         this.progress = progress;
         return this;

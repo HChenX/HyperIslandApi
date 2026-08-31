@@ -20,15 +20,22 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 超级岛收起（小岛）区域的布局配置，对应官方 {@code IslandTemplate.smallIslandArea}。
+ * <p>
+ * 可配置普通图片或组合图片（主图、小图与进度）。
+ */
 public final class SmallIslandArea {
     private CombinePicInfo combinePicInfo;
     private PicInfo picInfo;
 
+    /** 设置组合图片模块（主图、小图与进度）。 */
     public SmallIslandArea setCombinePicInfo(CombinePicInfo combinePicInfo) {
         this.combinePicInfo = combinePicInfo;
         return this;
     }
 
+    /** 设置普通图片模块。 */
     public SmallIslandArea setPicInfo(PicInfo picInfo) {
         this.picInfo = picInfo;
         return this;

@@ -20,6 +20,9 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 焦点通知的提示信息区，对应官方 {@code HintInfo}，用于补充提示文字或图片。
+ */
 public final class HintInfo extends TextAndColorInfo<HintInfo> {
     private ActionInfo actionInfo;
     private String colorContentBg;
@@ -28,31 +31,37 @@ public final class HintInfo extends TextAndColorInfo<HintInfo> {
     private int titleLineCount;
     private Integer type;
 
+    /** 设置提示区关联的动作信息。 */
     public HintInfo setActionInfo(ActionInfo actionInfo) {
         this.actionInfo = actionInfo;
         return this;
     }
 
+    /** 设置内容背景颜色。 */
     public HintInfo setColorContentBg(String colorContentBg) {
         this.colorContentBg = colorContentBg;
         return this;
     }
 
+    /** 设置提示图片 key。 */
     public HintInfo setPicContent(String picContent) {
         this.picContent = picContent;
         return this;
     }
 
+    /** 设置内嵌倒计时。 */
     public HintInfo setTimerInfo(TimerInfo timerInfo) {
         this.timerInfo = timerInfo;
         return this;
     }
 
+    /** 设置标题显示行数。 */
     public HintInfo setTitleLineCount(int titleLineCount) {
         this.titleLineCount = titleLineCount;
         return this;
     }
 
+    /** 设置提示信息类型：{@code 1} 简单、{@code 2} 复杂。 */
     public HintInfo setType(Integer type) {
         this.type = type;
         return this;

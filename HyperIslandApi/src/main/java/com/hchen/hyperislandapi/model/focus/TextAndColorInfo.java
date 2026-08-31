@@ -20,6 +20,14 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 焦点模板中文字与颜色信息的公共基类，对应官方 {@code TextAndColorInfo<T>}。
+ * <p>
+ * 提供标题、内容、副标题、附加标题与各类颜色（含深色变体）的设置；
+ * 深色字段未设置时，官方读取端会回退到对应的浅色字段。
+ *
+ * @param <T> 子类自身类型，用于实现链式调用
+ */
 public class TextAndColorInfo<T extends TextAndColorInfo<T>> {
     private String colorContent;
     private String colorContentDark;
@@ -33,13 +41,13 @@ public class TextAndColorInfo<T extends TextAndColorInfo<T>> {
     private String colorSubTitle;
     private String colorSubTitleDark;
     private String colorTitleDark;
-    private String title = "";
-    private String subTitle = "";
-    private String extraTitle = "";
-    private String specialTitle = "";
-    private String content = "";
-    private String subContent = "";
-    private String colorTitle = "";
+    private String title;
+    private String subTitle;
+    private String extraTitle;
+    private String specialTitle;
+    private String content;
+    private String subContent;
+    private String colorTitle;
 
     public T setColorContent(String colorContent) {
         this.colorContent = colorContent;

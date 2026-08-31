@@ -20,27 +20,37 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 焦点通知中的图片信息，对应官方 {@code PicInfo}。
+ * <p>
+ * {@code pic} 为图片 key，需与 {@code miui.focus.pics} Bundle 中的键一致；
+ * 深色模式可用 {@code picDark} 单独指定。
+ */
 public final class PicInfo extends TextAndColorInfo<PicInfo> {
     private ActionInfo actionInfo;
     private String pic;
     private String picDark;
     private Integer type;
 
+    /** 设置图片关联的动作信息。 */
     public PicInfo setActionInfo(ActionInfo actionInfo) {
         this.actionInfo = actionInfo;
         return this;
     }
 
+    /** 设置图片 key，需与 {@code miui.focus.pics} Bundle 中的键一致。 */
     public PicInfo setPic(String pic) {
         this.pic = pic;
         return this;
     }
 
+    /** 设置深色模式图片 key，未设置时官方回退到 {@code pic}。 */
     public PicInfo setPicDark(String picDark) {
         this.picDark = picDark;
         return this;
     }
 
+    /** 设置图片类型，如小图、中图、大图、动作图等。 */
     public PicInfo setType(Integer type) {
         this.type = type;
         return this;

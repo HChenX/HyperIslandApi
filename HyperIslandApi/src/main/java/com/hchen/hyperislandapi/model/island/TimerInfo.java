@@ -20,27 +20,37 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 倒计时信息，用于岛内与焦点模块的计时展示。
+ * <p>
+ * {@code timerType}：{@code -1} 表示倒计时、{@code 0} 表示正计时；
+ * {@code timerWhen} 为计时结束/开始的毫秒时间戳，{@code timerTotal} 为总时长（毫秒）。
+ */
 public final class TimerInfo {
     private Long timerSystemCurrent;
     private long timerTotal;
     private int timerType;
     private Long timerWhen;
 
+    /** 设置系统当前毫秒时间戳。 */
     public TimerInfo setTimerSystemCurrent(Long timerSystemCurrent) {
         this.timerSystemCurrent = timerSystemCurrent;
         return this;
     }
 
+    /** 设置计时总时长（毫秒）。 */
     public TimerInfo setTimerTotal(long timerTotal) {
         this.timerTotal = timerTotal;
         return this;
     }
 
+    /** 设置计时类型：{@code -1} 倒计时、{@code 0} 正计时。 */
     public TimerInfo setTimerType(int timerType) {
         this.timerType = timerType;
         return this;
     }
 
+    /** 设置计时结束（倒计时）或开始（正计时）的毫秒时间戳。 */
     public TimerInfo setTimerWhen(Long timerWhen) {
         this.timerWhen = timerWhen;
         return this;

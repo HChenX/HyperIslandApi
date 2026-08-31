@@ -20,15 +20,20 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 图标与文字组合信息，对应官方 {@code IconTextInfo}，常与 {@code islandFirstFloat} 配合使用。
+ */
 public final class IconTextInfo extends TextAndColorInfo<IconTextInfo> {
     private AnimIconInfo animIconInfo;
     private Integer type;
 
+    /** 设置动画图标信息。 */
     public IconTextInfo setAnimIconInfo(AnimIconInfo animIconInfo) {
         this.animIconInfo = animIconInfo;
         return this;
     }
 
+    /** 设置展示类型。 */
     public IconTextInfo setType(Integer type) {
         this.type = type;
         return this;

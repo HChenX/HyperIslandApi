@@ -20,9 +20,13 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 焦点通知封面信息，对应官方 {@code CoverInfo}，通常用于媒体类通知的封面图。
+ */
 public final class CoverInfo extends TextAndColorInfo<CoverInfo> {
     private String picCover;
 
+    /** 设置封面图片 key，需与 {@code miui.focus.pics} Bundle 中的键一致。 */
     public CoverInfo setPicCover(String picCover) {
         this.picCover = picCover;
         return this;

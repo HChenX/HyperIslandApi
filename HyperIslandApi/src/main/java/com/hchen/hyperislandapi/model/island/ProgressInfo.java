@@ -20,27 +20,36 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 超级岛内的进度条信息，包含到达/未到达颜色与进度值。
+ * <p>
+ * {@code progress} 为进度百分比，负值会被官方读取端钳制为 0。
+ */
 public final class ProgressInfo {
     private String colorReach;
     private String colorUnReach;
     private Boolean isCCW = Boolean.FALSE;
     private Integer progress;
 
+    /** 设置到达部分的颜色。 */
     public ProgressInfo setColorReach(String colorReach) {
         this.colorReach = colorReach;
         return this;
     }
 
+    /** 设置未到达部分的颜色。 */
     public ProgressInfo setColorUnReach(String colorUnReach) {
         this.colorUnReach = colorUnReach;
         return this;
     }
 
+    /** 设置是否逆时针填充。 */
     public ProgressInfo setCCW(Boolean CCW) {
         isCCW = CCW;
         return this;
     }
 
+    /** 设置进度百分比，负值会被官方读取端钳制为 0。 */
     public ProgressInfo setProgress(Integer progress) {
         this.progress = progress;
         return this;

@@ -20,27 +20,36 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 会话（聊天）类焦点通知的信息区，对应官方 {@code ChatInfo}。
+ * <p>
+ * 包含聊天气泡的应用图标、头像与倒计时等配置。
+ */
 public final class ChatInfo extends TextAndColorInfo<ChatInfo> {
     private String appIconPkg;
     private String picProfile;
     private String picProfileDark;
     private TimerInfo timerInfo;
 
+    /** 设置聊天应用的应用包名。 */
     public ChatInfo setAppIconPkg(String appIconPkg) {
         this.appIconPkg = appIconPkg;
         return this;
     }
 
+    /** 设置聊天气泡头像图片 key。 */
     public ChatInfo setPicProfile(String picProfile) {
         this.picProfile = picProfile;
         return this;
     }
 
+    /** 设置聊天气泡深色模式头像图片 key，未设置时官方回退到 {@code picProfile}。 */
     public ChatInfo setPicProfileDark(String picProfileDark) {
         this.picProfileDark = picProfileDark;
         return this;
     }
 
+    /** 设置聊天气泡内嵌倒计时。 */
     public ChatInfo setTimerInfo(TimerInfo timerInfo) {
         this.timerInfo = timerInfo;
         return this;

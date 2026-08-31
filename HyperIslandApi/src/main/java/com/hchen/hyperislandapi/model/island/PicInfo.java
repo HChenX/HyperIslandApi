@@ -20,6 +20,12 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 超级岛内的图片信息，对应官方 {@code miui.systemui.dynamicisland.model.PicInfo}。
+ * <p>
+ * {@code pic} 为与 {@code miui.focus.pics} Bundle 中键一致的字符串；
+ * {@code number} 默认 {@code -1} 表示未设置帧数量。
+ */
 public final class PicInfo {
     private Boolean autoplay = Boolean.FALSE;
     private String contentDescription;
@@ -30,41 +36,49 @@ public final class PicInfo {
     private String pic;
     private Integer type;
 
+    /** 设置是否自动播放。 */
     public PicInfo setAutoplay(Boolean autoplay) {
         this.autoplay = autoplay;
         return this;
     }
 
+    /** 设置图片内容描述，用于无障碍播报。 */
     public PicInfo setContentDescription(String contentDescription) {
         this.contentDescription = contentDescription;
         return this;
     }
 
+    /** 设置穿出效果颜色。 */
     public PicInfo setEffectColor(String effectColor) {
         this.effectColor = effectColor;
         return this;
     }
 
+    /** 设置穿出效果资源。 */
     public PicInfo setEffectSrc(String effectSrc) {
         this.effectSrc = effectSrc;
         return this;
     }
 
+    /** 设置是否循环播放。 */
     public PicInfo setLoop(Boolean loop) {
         this.loop = loop;
         return this;
     }
 
+    /** 设置动画帧数量，传 {@code -1} 表示未设置。 */
     public PicInfo setNumber(Integer number) {
         this.number = number;
         return this;
     }
 
+    /** 设置图片 key，需与 {@code miui.focus.pics} Bundle 中的键一致。 */
     public PicInfo setPic(String pic) {
         this.pic = pic;
         return this;
     }
 
+    /** 设置图片类型。 */
     public PicInfo setType(Integer type) {
         this.type = type;
         return this;

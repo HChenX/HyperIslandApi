@@ -20,6 +20,9 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 超级岛内的文字信息模块，包含标题、内容与数字相关的展示开关。
+ */
 public final class TextInfo {
     private String content;
     private String frontTitle;
@@ -29,36 +32,43 @@ public final class TextInfo {
     private String title;
     private Boolean turnAnim = Boolean.FALSE;
 
+    /** 设置正文内容。 */
     public TextInfo setContent(String content) {
         this.content = content;
         return this;
     }
 
+    /** 设置前导标题。 */
     public TextInfo setFrontTitle(String frontTitle) {
         this.frontTitle = frontTitle;
         return this;
     }
 
+    /** 设置内容是否为数字显示。 */
     public TextInfo setTitleDigit(Boolean titleDigit) {
         isTitleDigit = titleDigit;
         return this;
     }
 
+    /** 设置是否使用窄字体。 */
     public TextInfo setNarrowFont(Boolean narrowFont) {
         this.narrowFont = narrowFont;
         return this;
     }
 
+    /** 设置是否显示高亮颜色。 */
     public TextInfo setShowHighlightColor(Boolean showHighlightColor) {
         this.showHighlightColor = showHighlightColor;
         return this;
     }
 
+    /** 设置主标题。 */
     public TextInfo setTitle(String title) {
         this.title = title;
         return this;
     }
 
+    /** 设置切换动画。 */
     public TextInfo setTurnAnim(Boolean turnAnim) {
         this.turnAnim = turnAnim;
         return this;

@@ -18,6 +18,18 @@
  */
 package com.hchen.hyperislandapi.callback;
 
+/**
+ * 泛型版本的序列化前回调，用于覆盖单个指定类型的模板。
+ * <p>
+ * 由 {@link com.hchen.hyperislandapi.HyperIslandApi#build(String, Object, CoverTemplateCallback2)} 使用。
+ *
+ * @param <T> 模板类型
+ */
 public interface CoverTemplateCallback2<T> {
+    /**
+     * 覆盖模板数据。
+     *
+     * @param template 待覆盖的模板实例
+     */
     void cover(T template);
 }

@@ -20,6 +20,13 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * V3 高亮信息区，对应官方 {@code HighlightInfoV3}，用于双文案高亮展示。
+ * <p>
+ * 通过 {@code primaryText}/{@code secondaryText} 提供主副两行文案，
+ * 字段名为官方原始命名（注意 {@code highLight} 中的大写 {@code L} 与
+ * {@code highLightbgColor} 中的小写 {@code bg}），不可修改以免序列化错位。
+ */
 public final class HighlightInfoV3 extends TextAndColorInfo<HighlightInfoV3> {
     private ActionInfo actionInfo;
     private String highLightText;
@@ -35,66 +42,79 @@ public final class HighlightInfoV3 extends TextAndColorInfo<HighlightInfoV3> {
     private String secondaryText;
     private Boolean showSecondaryLine = Boolean.FALSE;
 
+    /** 设置高亮区关联的动作信息。 */
     public HighlightInfoV3 setActionInfo(ActionInfo actionInfo) {
         this.actionInfo = actionInfo;
         return this;
     }
 
+    /** 设置高亮文案。 */
     public HighlightInfoV3 setHighLightText(String highLightText) {
         this.highLightText = highLightText;
         return this;
     }
 
+    /** 设置高亮文案颜色。 */
     public HighlightInfoV3 setHighLightTextColor(String highLightTextColor) {
         this.highLightTextColor = highLightTextColor;
         return this;
     }
 
+    /** 设置深色模式高亮文案颜色。 */
     public HighlightInfoV3 setHighLightTextColorDark(String highLightTextColorDark) {
         this.highLightTextColorDark = highLightTextColorDark;
         return this;
     }
 
+    /** 设置高亮背景颜色。 */
     public HighlightInfoV3 setHighLightbgColor(String highLightbgColor) {
         this.highLightbgColor = highLightbgColor;
         return this;
     }
 
+    /** 设置深色模式高亮背景颜色。 */
     public HighlightInfoV3 setHighLightbgColorDark(String highLightbgColorDark) {
         this.highLightbgColorDark = highLightbgColorDark;
         return this;
     }
 
+    /** 设置主文案主题色。 */
     public HighlightInfoV3 setPrimaryColor(String primaryColor) {
         this.primaryColor = primaryColor;
         return this;
     }
 
+    /** 设置深色模式主文案主题色。 */
     public HighlightInfoV3 setPrimaryColorDark(String primaryColorDark) {
         this.primaryColorDark = primaryColorDark;
         return this;
     }
 
+    /** 设置主文案内容。 */
     public HighlightInfoV3 setPrimaryText(String primaryText) {
         this.primaryText = primaryText;
         return this;
     }
 
+    /** 设置副文案主题色。 */
     public HighlightInfoV3 setSecondaryColor(String secondaryColor) {
         this.secondaryColor = secondaryColor;
         return this;
     }
 
+    /** 设置深色模式副文案主题色。 */
     public HighlightInfoV3 setSecondaryColorDark(String secondaryColorDark) {
         this.secondaryColorDark = secondaryColorDark;
         return this;
     }
 
+    /** 设置副文案内容。 */
     public HighlightInfoV3 setSecondaryText(String secondaryText) {
         this.secondaryText = secondaryText;
         return this;
     }
 
+    /** 设置是否显示副文案分隔线。 */
     public HighlightInfoV3 setShowSecondaryLine(Boolean showSecondaryLine) {
         this.showSecondaryLine = showSecondaryLine;
         return this;

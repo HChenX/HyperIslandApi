@@ -20,6 +20,9 @@ package com.hchen.hyperislandapi.model.island;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 超级岛分享数据，用于岛外分享时携带标题、内容与图片。
+ */
 public final class ShareData {
     private String content;
     private String pic;
@@ -27,26 +30,31 @@ public final class ShareData {
     private String sharePic;
     private String title;
 
+    /** 设置分享内容。 */
     public ShareData setContent(String content) {
         this.content = content;
         return this;
     }
 
+    /** 设置分享图片 key。 */
     public ShareData setPic(String pic) {
         this.pic = pic;
         return this;
     }
 
+    /** 设置分享具体内容。 */
     public ShareData setShareContent(String shareContent) {
         this.shareContent = shareContent;
         return this;
     }
 
+    /** 设置分享具体图片 key。 */
     public ShareData setSharePic(String sharePic) {
         this.sharePic = sharePic;
         return this;
     }
 
+    /** 设置分享标题。 */
     public ShareData setTitle(String title) {
         this.title = title;
         return this;

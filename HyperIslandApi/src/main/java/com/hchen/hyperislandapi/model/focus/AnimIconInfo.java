@@ -20,6 +20,12 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 动画图标信息，对应官方 {@code AnimIconInfo}，用于展示带动画效果的图标。
+ * <p>
+ * {@code number} 默认 {@code -1} 表示未设置动画帧数量；
+ * {@code src} 为动画资源名，深色模式可用 {@code srcDark} 覆盖。
+ */
 public final class AnimIconInfo extends TextAndColorInfo<AnimIconInfo> {
     private Boolean autoplay;
     private String effectColor;
@@ -30,41 +36,49 @@ public final class AnimIconInfo extends TextAndColorInfo<AnimIconInfo> {
     private String srcDark;
     private Integer type;
 
+    /** 设置是否自动播放动画。 */
     public AnimIconInfo setAutoplay(Boolean autoplay) {
         this.autoplay = autoplay;
         return this;
     }
 
+    /** 设置穿出效果颜色。 */
     public AnimIconInfo setEffectColor(String effectColor) {
         this.effectColor = effectColor;
         return this;
     }
 
+    /** 设置穿出效果资源。 */
     public AnimIconInfo setEffectSrc(String effectSrc) {
         this.effectSrc = effectSrc;
         return this;
     }
 
+    /** 设置是否循环播放动画。 */
     public AnimIconInfo setLoop(Boolean loop) {
         this.loop = loop;
         return this;
     }
 
+    /** 设置动画帧数量，传 {@code -1} 表示未设置。 */
     public AnimIconInfo setNumber(Integer number) {
         this.number = number;
         return this;
     }
 
+    /** 设置动画资源名。 */
     public AnimIconInfo setSrc(String src) {
         this.src = src;
         return this;
     }
 
+    /** 设置深色模式动画资源名，未设置时官方回退到 {@code src}。 */
     public AnimIconInfo setSrcDark(String srcDark) {
         this.srcDark = srcDark;
         return this;
     }
 
+    /** 设置动画类型：{@code 1} 视频、{@code 2} Shader。 */
     public AnimIconInfo setType(Integer type) {
         this.type = type;
         return this;

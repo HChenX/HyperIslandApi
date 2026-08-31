@@ -20,6 +20,11 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 焦点通知中的进度条信息，对应官方 {@code ProgressInfo}。
+ * <p>
+ * 支持纯进度条与自定义首尾图片进度条，并可按进度方向（顺时针/逆时针）展示。
+ */
 public final class ProgressInfo {
     private String colorProgress;
     private String colorProgressDark;
@@ -34,61 +39,73 @@ public final class ProgressInfo {
     private String picMiddleUnselected;
     private int progress;
 
+    /** 设置进度条颜色。 */
     public ProgressInfo setColorProgress(String colorProgress) {
         this.colorProgress = colorProgress;
         return this;
     }
 
+    /** 设置深色模式进度条颜色。 */
     public ProgressInfo setColorProgressDark(String colorProgressDark) {
         this.colorProgressDark = colorProgressDark;
         return this;
     }
 
+    /** 设置进度条终点颜色。 */
     public ProgressInfo setColorProgressEnd(String colorProgressEnd) {
         this.colorProgressEnd = colorProgressEnd;
         return this;
     }
 
+    /** 设置深色模式进度条终点颜色。 */
     public ProgressInfo setColorProgressEndDark(String colorProgressEndDark) {
         this.colorProgressEndDark = colorProgressEndDark;
         return this;
     }
 
+    /** 设置是否自动推进进度。 */
     public ProgressInfo setAutoProgress(boolean autoProgress) {
         isAutoProgress = autoProgress;
         return this;
     }
 
+    /** 设置是否逆时针填充。 */
     public ProgressInfo setCCW(boolean CCW) {
         isCCW = CCW;
         return this;
     }
 
+    /** 设置进度条终点图片 key。 */
     public ProgressInfo setPicEnd(String picEnd) {
         this.picEnd = picEnd;
         return this;
     }
 
+    /** 设置进度条终点未选中态图片 key。 */
     public ProgressInfo setPicEndUnselected(String picEndUnselected) {
         this.picEndUnselected = picEndUnselected;
         return this;
     }
 
+    /** 设置进度条起始图片 key。 */
     public ProgressInfo setPicForward(String picForward) {
         this.picForward = picForward;
         return this;
     }
 
+    /** 设置进度条中间图片 key。 */
     public ProgressInfo setPicMiddle(String picMiddle) {
         this.picMiddle = picMiddle;
         return this;
     }
 
+    /** 设置进度条中间未选中态图片 key。 */
     public ProgressInfo setPicMiddleUnselected(String picMiddleUnselected) {
         this.picMiddleUnselected = picMiddleUnselected;
         return this;
     }
 
+    /** 设置进度值，负数会被官方读取端钳制为 0。 */
     public ProgressInfo setProgress(int progress) {
         this.progress = progress;
         return this;

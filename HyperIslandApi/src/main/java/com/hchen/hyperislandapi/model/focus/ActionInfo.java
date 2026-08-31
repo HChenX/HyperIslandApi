@@ -20,6 +20,12 @@ package com.hchen.hyperislandapi.model.focus;
 
 import androidx.annotation.NonNull;
 
+/**
+ * 焦点通知的动作按钮信息，对应官方 {@code ActionInfo}。
+ * <p>
+ * 一个动作包含动作标识、类型、图标、标题、手势意图等；
+ * {@code action} 需与 {@code miui.focus.actions} Bundle 中的键一一对应。
+ */
 public final class ActionInfo {
     private String action;
     private String actionBgColor;
@@ -37,76 +43,91 @@ public final class ActionInfo {
     private ProgressInfo progressInfo;
     private Integer type;
 
+    /** 设置动作标识，需与 {@code miui.focus.actions} Bundle 中的键对应。 */
     public ActionInfo setAction(String action) {
         this.action = action;
         return this;
     }
 
+    /** 设置动作按钮背景颜色。 */
     public ActionInfo setActionBgColor(String actionBgColor) {
         this.actionBgColor = actionBgColor;
         return this;
     }
 
+    /** 设置深色模式动作按钮背景颜色。 */
     public ActionInfo setActionBgColorDark(String actionBgColorDark) {
         this.actionBgColorDark = actionBgColorDark;
         return this;
     }
 
+    /** 设置动作按钮按压态背景颜色。 */
     public ActionInfo setActionBgPressColor(String actionBgPressColor) {
         this.actionBgPressColor = actionBgPressColor;
         return this;
     }
 
+    /** 设置深色模式按压态背景颜色。 */
     public ActionInfo setActionBgPressColorDark(String actionBgPressColorDark) {
         this.actionBgPressColorDark = actionBgPressColorDark;
         return this;
     }
 
+    /** 设置动作图标图片 key。 */
     public ActionInfo setActionIcon(String actionIcon) {
         this.actionIcon = actionIcon;
         return this;
     }
 
+    /** 设置深色模式动作图标图片 key。 */
     public ActionInfo setActionIconDark(String actionIconDark) {
         this.actionIconDark = actionIconDark;
         return this;
     }
 
+    /** 设置动作意图，内容为跳转的 URL、Action 或 Service 标识。 */
     public ActionInfo setActionIntent(String actionIntent) {
         this.actionIntent = actionIntent;
         return this;
     }
 
+    /** 设置意图类型：{@code 1} URL、{@code 2} Action、{@code 3} Service。 */
     public ActionInfo setActionIntentType(Integer actionIntentType) {
         this.actionIntentType = actionIntentType;
         return this;
     }
 
+    /** 设置动作按钮标题文字。 */
     public ActionInfo setActionTitle(String actionTitle) {
         this.actionTitle = actionTitle;
         return this;
     }
 
+    /** 设置动作按钮标题颜色。 */
     public ActionInfo setActionTitleColor(String actionTitleColor) {
         this.actionTitleColor = actionTitleColor;
         return this;
     }
 
+    /** 设置深色模式动作按钮标题颜色。 */
     public ActionInfo setActionTitleColorDark(String actionTitleColorDark) {
         this.actionTitleColorDark = actionTitleColorDark;
         return this;
     }
 
+    /** 设置点击后是否收起岛。 */
     public ActionInfo setClickWithCollapse(boolean clickWithCollapse) {
         this.clickWithCollapse = clickWithCollapse;
         return this;
     }
 
+    /** 设置动作内嵌进度条信息。 */
     public ActionInfo setProgressInfo(ProgressInfo progressInfo) {
         this.progressInfo = progressInfo;
         return this;
     }
 
+    /** 设置动作类型：{@code 0} 普通、{@code 1} 进度、{@code 2} 文字。 */
     public ActionInfo setType(Integer type) {
         this.type = type;
         return this;
