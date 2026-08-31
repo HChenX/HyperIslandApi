@@ -3,20 +3,19 @@ plugins {
     id 'maven-publish'
 }
 
-def defVersion = 'v.0.7'
-int defVersionCode = 2025102500
+def defVersion = '0.8'
+int defVersionCode = 2026083100
 
 group = 'com.github.HChenX'
 version = defVersion
 
 android {
     namespace 'com.hchen.hyperislandapi'
-    compileSdk 36
+    compileSdk 37
 
     defaultConfig {
         minSdk 29
-        // noinspection OldTargetApi
-        targetSdk 35
+        targetSdk 37
         // noinspection HighAppVersionCode
         versionCode defVersionCode
         versionName defVersion
@@ -60,7 +59,6 @@ tasks.register('androidSourcesJar', Jar) {
 }
 
 dependencies {
-    // implementation libs.gson
     implementation libs.appcompat
     implementation libs.jackson.databind
 }

@@ -3,13 +3,13 @@ plugins {
 }
 
 android {
-    namespace 'com.hchen.hyperislandapi'
-    compileSdk 36
+    namespace 'com.hchen.hyperislandapi.example'
+    compileSdk 37
 
     defaultConfig {
-        applicationId "com.hchen.hyperislandapi"
+        applicationId "com.hchen.hyperislandapi.example"
         minSdk 29
-        targetSdk 36
+        targetSdk 37
         versionCode 1
         versionName "1.0"
     }
@@ -25,14 +25,6 @@ android {
         sourceCompatibility JavaVersion.VERSION_21
         targetCompatibility JavaVersion.VERSION_21
     }
-
-    packaging {
-        resources {
-            excludes += "META-INF/**"
-        }
-    }
-
-    aaptOptions.additionalParameters '--allow-reserved-package-id', '--package-id', '0x66'
 }
 
 dependencies {
