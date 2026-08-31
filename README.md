@@ -14,16 +14,15 @@
 
 ---
 
-## ✨ API 介绍
+## ✨ 项目介绍
 
-- 从 Hyper 系统中提取的超级岛部分 API 并整理而成
-- 如果你不是 Root 用户并且不从事模块开发，那么您大概率用不到本 API
+- 从小米 Hyper OS 系统中提取的超级岛 / 焦点通知 API，整理并封装而成。
+- 小米官方接入需要手写 JSON，本库将文件编写转化为直接调用 API 代码，由库自动序列化。
+- 如果不从事模块开发，你大概率用不到本 API。
 
 ---
 
 ## ✨ 导入依赖
-
-- 添加依赖：
 
 ```groovy
 dependencyResolutionManagement {
@@ -35,7 +34,7 @@ dependencyResolutionManagement {
 }
 
 dependencies {
-    implementation 'com.github.HChenX:HyperIslandApi:v.0.7' // 引入依赖
+    implementation 'com.github.HChenX:HyperIslandApi:v.0.8' // 引入依赖
     implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0' // 序列化工具
 }
 ```
@@ -44,84 +43,51 @@ dependencies {
 
 ---
 
-## 🛠 模块使用
+## 🛠 快速使用
 
-- 使用方法：
+- 三步完成一条焦点通知：
+  1. 用 `Template` 配置焦点通知，用 `IslandTemplate` 配置超级岛；
+  2. 图片 / 图标放入 `Bundle`，动作放入动作 `Bundle`，与 JSON 中的字符串 key 一一对应；
+  3. 调用 `HyperIslandApi#build()` 得到 `Data`，把其中的 JSON 与 Bundle 写入 Notification extras。
 
-```java
-public class Test {
-    public void test() {
-        // 代码仅作示例，不一定可用
-        NotificationCompat.Builder builder = new NotificationCompat.Builder(context, CHANNEL_ID);
-        // TODO
+- 完整的使用示例（含小米官方 JSON 翻译对照）请参考 `app` 模块下的示例类：
 
-        HyperIslandApi api = new HyperIslandApi();
-        api.setTemplate(new Template()
-            // .setProtocol(1)
-            .setEnableFloat(true)
-            .setUpdatable(true)
-            // .setScene("template_v2")
-            .setAodTitle("Aod Title")
-            .setTicker("Ticker")
-            .setTickerPic("api.demo.pic")
-            .setAodPic("api.demo.pic")
-            .setIslandFirstFloat(false)
-            .setBaseInfo(new BaseInfo()
-                .setTitle("B Title")
-                .setColorTitle("#FFFFFF")
-                .setContent("B Content")
-                .setColorContent("#FFFFFF")
-                .setSubContent("")
-                .setType(2)
-            )
-            .setBgInfo(new BgInfo()
-                .setColorBg("#1A1A1A")
-            )
-            .setActions(new ActionInfo[]{new ActionInfo()
-                .setType(2)
-                .setActionTitle("Close")
-                .setActionTitleColor("#FFFFFF")
-                .setActionBgColor("#1EFFFFFF")
-                .setActionBgPressColor("#24FFFFFF")
-                .setActionIntentType(2)
-            })
-        );
-        api.setIslandTemplate(new IslandTemplate()
-            .setIslandProperty(2)
-            .setBigIslandArea(new BigIslandArea()
-                .setImageTextInfoLeft(new ImageTextInfo()
-                    .setType(1)
-                    .setPicInfo(new PicInfo()
-                        .setType(1)
-                        .setPic("api.demo.island.pic")
-                    )
-                )
-            )
-            .setSmallIslandArea(new SmallIslandArea()
-                .setPicInfo(new PicInfo()
-                    .setType(1)
-                    .setPic("api.demo.island.pic")
-                )
-            )
-        );
-
-        Bundle bundle = new Bundle();
-        bundle.putParcelable("api.demo.pic", Icon.createWithBitmap(getBitmapFromDrawable(context, R.drawable.ic_launcher_foreground)));
-        bundle.putParcelable("api.demo.island.pic", Icon.createWithBitmap(getBitmapFromDrawable(context, R.drawable.ic_launcher_foreground)));
-        api.setPicBundle(bundle);
-        api.build(builder);
-
-        Notification notification = builder.build();
-        notificationManager.notify(1, notification);
-    }
-}
 ```
+app/src/main/java/com/hchen/hyperislandapi/example/MiuiFocusExamples.java
+```
+
+- 每个示例都保留了 JSON key 与 API setter 的对应关系，可直接对照官方 JSON 学习字段含义。
+- 注意：本库配合模块框架使用，不直接发送通知；小米不允许非授权软件发布 island，
+  示例仅演示构造过程。
 
 ---
 
-## 🌟 混淆配置
+## ✨ 序列化产物说明
+
+- 库只输出 `param_v2`（焦点模板）与其中内嵌的 `param_island`（超级岛模板）字段。
+- 未设置字段（null / 默认值 / 空串）不会出现在序列化产物中，与官方 Gson 读取行为一致，
+  避免夹杂多余参数导致异常。
+
+---
+
+## ✨ 混淆配置
 
 ```text
 // 不建议混淆本 API
 -keep class com.hchen.hyperislandapi.** {*;}
 ```
+
+---
+
+## 📜 v.0.8 变更
+
+- 新增 `CompetitionIconTextInfo`（竞争图标文案模块）及 `Template.competitionIconTextInfo`。
+- `IslandTemplate` 新增 `appContentDescription`（岛无障碍内容描述）与 `clickDirectIntent`（os4 新增：点击岛直接派发通知意图）；`FixedWidthDigitInfo` 新增 `pic` 字段。
+- `MultiProgressInfo.progress` 默认值修正为 `-1`（与官方一致）。
+- 新增 VOIP 支持：`setParamKey(Const.Param.PARAM_VOIP_V2)` 可产出通话焦点通知。
+- `parse()` 双层自动兼容：既接受完整 `param_v2` 壳，也接受直接给出的模板内容。
+- `build()` 不再修改调用方传入的模板实例（构建副本）。
+- `Data` 新增 `applyTo(Notification.Builder)` 与 `toExtras()` 便捷写入。
+- `HyperIslandApiException` 统一异常。
+- 序列化产物不再夹杂空串字段；`Const` 补充官方 `param_island`、VOIP、channeltype、岛状态回调等常量。
+- 全量补充 javadoc 文档。
