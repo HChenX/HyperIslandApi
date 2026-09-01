@@ -8,7 +8,7 @@
 ![last commit](https://img.shields.io/github/last-commit/HChenX/HyperIslandApi?style=flat)
 ![language](https://img.shields.io/badge/language-java-purple)
 
-<p><b><a href="README.md">简体中文</a></b></p>
+[//]: # (<p><b><a href="README.md">简体中文</a></b></p>)
 <p>Hyper Island Api</p>
 </div>
 
@@ -18,7 +18,6 @@
 
 - 从小米 Hyper OS 系统中提取的超级岛 / 焦点通知 API，整理并封装而成。
 - 小米官方接入需要手写 JSON，本库将文件编写转化为直接调用 API 代码，由库自动序列化。
-- 如果不从事模块开发，你大概率用不到本 API。
 
 ---
 
@@ -34,8 +33,8 @@ dependencyResolutionManagement {
 }
 
 dependencies {
-    implementation 'com.github.HChenX:HyperIslandApi:v.0.8' // 引入依赖
-    implementation 'com.fasterxml.jackson.core:jackson-databind:2.20.0' // 序列化工具
+    implementation 'com.github.HChenX:HyperIslandApi:0.9' // 引入依赖
+    implementation 'com.fasterxml.jackson.core:jackson-databind:2.22.2' // 序列化工具
 }
 ```
 
@@ -46,9 +45,9 @@ dependencies {
 ## 🛠 快速使用
 
 - 三步完成一条焦点通知：
-  1. 用 `Template` 配置焦点通知，用 `IslandTemplate` 配置超级岛；
-  2. 图片 / 图标放入 `Bundle`，动作放入动作 `Bundle`，与 JSON 中的字符串 key 一一对应；
-  3. 调用 `HyperIslandApi#build()` 得到 `Data`，把其中的 JSON 与 Bundle 写入 Notification extras。
+    1. 用 `Template` 配置焦点通知，用 `IslandTemplate` 配置超级岛；
+    2. 图片 / 图标放入 `Bundle`，动作放入动作 `Bundle`，与 JSON 中的字符串 key 一一对应；
+    3. 调用 `HyperIslandApi#build()` 得到 `Data`，把其中的 JSON 与 Bundle 写入 Notification extras。
 
 - 完整的使用示例（含小米官方 JSON 翻译对照）请参考 `app` 模块下的示例类：
 
@@ -56,9 +55,7 @@ dependencies {
 app/src/main/java/com/hchen/hyperislandapi/example/MiuiFocusExamples.java
 ```
 
-- 每个示例都保留了 JSON key 与 API setter 的对应关系，可直接对照官方 JSON 学习字段含义。
-- 注意：本库配合模块框架使用，不直接发送通知；小米不允许非授权软件发布 island，
-  示例仅演示构造过程。
+- 注意： 示例仅演示构造过程。
 
 ---
 
