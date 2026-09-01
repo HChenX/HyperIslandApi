@@ -20,16 +20,17 @@ package com.hchen.hyperislandapi.callback;
 
 import androidx.annotation.Nullable;
 
+import com.hchen.hyperislandapi.HyperIslandApi;
 import com.hchen.hyperislandapi.template.IslandTemplate;
 import com.hchen.hyperislandapi.template.Template;
 
 /**
- * 序列化前回调，用于覆盖焦点模板与超级岛模板中的任意字段。
+ * 序列化前回调，用于同时覆盖焦点模板与超级岛模板。
  * <p>
- * 在 {@link com.hchen.hyperislandapi.HyperIslandApi#build()} 序列化之前调用，
- * 可在此统一处理动态数据、合并 {@link com.hchen.hyperislandapi.HyperIslandApi#parse(String)} 后的结果。
+ * 在 {@link HyperIslandApi#build()} 序列化之前调用，
+ * 可在此统一处理动态数据、合并 {@link HyperIslandApi#setMergeJson(String)} 后的结果。
  */
-public interface CoverTemplateCallback {
+public interface CoverCallback {
     /**
      * 覆盖模板数据。
      *
