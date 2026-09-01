@@ -39,12 +39,7 @@ import com.hchen.hyperislandapi.template.Template;
  * <p>
  * 每个静态方法对应 {@code HyperIslandApi/src/main/example/} 下的一个官方 json，
  * 展示如何用代码表达 SystemUI 自用的焦点通知/超级岛数据，返回值即
- * {@link HyperIslandApi.Data}（内含 JSON 与 Bundle），示例仅演示构造、不发送通知
- * （小米不允许非授权软件发布 island）。
- * <p>
- * 官方 json 中残留的旧协议键（如 {@code protocol}、{@code scene}、旧的
- * {@code timerType} 等）已在 V3 模型中移除，系统经 Gson 读取时会忽略，
- * 本库无需也不应输出这些键，以保证序列化产物纯净。
+ * {@link HyperIslandApi.Data}（内含 JSON 与 Bundle）
  */
 public final class MiuiFocusExamples {
 
@@ -53,14 +48,6 @@ public final class MiuiFocusExamples {
 
     /**
      * 倒计时焦点通知，翻译自 {@code clock_focus.json} 的 {@code param_v2}。
-     * <p>
-     * key 对照：{@code updatable→setUpdatable}、{@code aodTitle→setAodTitle}、
-     * {@code aodPic→setAodPic}、{@code highlightInfo→setHighlightInfo}、
-     * {@code animTextInfo→setAnimTextInfo}、{@code actions→setActions}、
-     * {@code param_island→setIslandTemplate}。
-     * <p>
-     * 官方 json 顶层与 {@code param_v2} 顶层的 {@code protocol}、{@code scene}、
-     * {@code timerType} 等旧键省略，由 V3 忽略。
      */
     public static HyperIslandApi.Data clockFocus() {
         HighlightInfo highlightInfo = new HighlightInfo()
@@ -136,14 +123,6 @@ public final class MiuiFocusExamples {
 
     /**
      * 录音进行中的焦点通知，翻译自 {@code recorder_focus.json} 的 {@code param_v2}。
-     * <p>
-     * key 对照：{@code notifyId→setNotifyId}、{@code animTextInfo→setAnimTextInfo}、
-     * {@code actions→setActions}、{@code param_island({@code islandPriority/islandProperty})
-     * → setIslandPriority/setIslandProperty}。
-     * <p>
-     * 官方 {@code param_v2} 顶层的 {@code protocol}、{@code scene}、{@code content}、
-     * {@code timerType} 等旧键省略，由 V3 忽略；时间展示经 {@code animTextInfo.timerInfo}
-     * 与 {@code param_island} 中的 {@code timerInfo} 表达。
      */
     public static HyperIslandApi.Data recorderFocus() {
         Template template = new Template()
@@ -201,12 +180,6 @@ public final class MiuiFocusExamples {
 
     /**
      * 录音完成的焦点通知，翻译自 {@code recorder_done_focus.json} 的 {@code param_v2}。
-     * <p>
-     * key 对照：{@code notifyId→setNotifyId}、{@code animTextInfo.title→setTitle}（动画模块）、
-     * {@code actions.actionIntent(actionIntentType=1)→setActionIntent/setActionIntentType}、
-     * {@code param_island.islandTimeout→setIslandTimeout}、大岛顶格 {@code picInfo} → setPicInfo。
-     * <p>
-     * 官方 json 中的 {@code protocol}、{@code scene} 与 {@code param_v2} 顶层的旧键省略。
      */
     public static HyperIslandApi.Data recorderDoneFocus() {
         Template template = new Template()
@@ -258,12 +231,6 @@ public final class MiuiFocusExamples {
 
     /**
      * 手电筒使用中的焦点通知，翻译自 {@code flashlight_focus.json} 的 {@code param_v2}。
-     * <p>
-     * key 对照：{@code reopen("reopen")→setReopen}、{@code baseInfo→setBaseInfo}、
-     * {@code bgInfo→setBgInfo}、{@code iconTextInfo→setIconTextInfo}、
-     * {@code actions.actionIntent}(使用中动画) → setActionIntent。
-     * <p>
-     * 官方 json 中的 {@code protocol}、{@code scene} 旧键省略。
      */
     public static HyperIslandApi.Data flashlightFocus() {
         Template template = new Template()
